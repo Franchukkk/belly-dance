@@ -17,8 +17,10 @@ a
     text-decoration: none
 .wrapper
     max-width: 1518rem
-    width: 80%
+    width: 90%
     margin: 0 auto
+    +media(1300)
+        width: 80%
 
 .d-flex
     display: flex
@@ -38,22 +40,24 @@ a
     position: fixed
     top: 0
     width: 100%
+    z-index: 10
+    background-color: #fff
 
 .header-line-wrap
     min-height: 110px
 
-.top-navigation
-    width: 40%
+.top-navigation 
+    width: 42%
     li a
-    color: #1E1E1E
-    font-family: "Yeseva One"
-    font-size: 18rem
-    font-weight: 400
-    letter-spacing: 0.9rem
-    text-transform: uppercase
-    text-decoration: none
-    &:hover
-        font-weight: 600
+        color: #1E1E1E
+        font-family: "Yeseva One"
+        font-size: 18rem
+        font-weight: 400
+        letter-spacing: 0.9rem
+        text-transform: uppercase
+        text-decoration: none
+        &:hover
+            font-weight: 600
     ul
         width: 100%
         column-gap: 15px
@@ -238,3 +242,83 @@ a
         color: #fff
         background-position: 100% 0
         background: linear-gradient(92deg, #C482E6 0%, #1E1E1E 102.25%, #C482E6 100%)
+
+
+
+.header-general
+    position: relative
+    background-color: #000
+    background-image: url(../img/header-lines-bg.svg)
+    background-position-y: -8.7%
+    padding-bottom: 215px
+
+.header-bg
+    padding-top: 195rem
+    background: linear-gradient(54deg, #0F0F11 22.96%, #242424 84.96%)
+    
+
+.header-description
+    position: relative
+    max-width: 750rem
+    padding-bottom: 155rem
+    z-index: 1
+    p
+        color: #FFF
+        leading-trim: both
+        text-edge: cap
+        font-size: 24rem
+        font-weight: 400
+        margin-bottom: 50rem
+h1
+    leading-trim: both
+    text-edge: cap
+    font-family: "Yeseva One"
+    font-size: 86rem
+    font-weight: 400
+    letter-spacing: 8.6rem
+    text-transform: uppercase
+    margin-bottom: 20px
+    background: linear-gradient(91deg, #C482E6 4.35%, #FFF 75.25%)
+    background-clip: text
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+
+.button-violet
+    display: flex
+    justify-content: center
+    align-items: center
+    position: relative
+    max-width: 365rem
+    height: 70rem
+    color: #C482E6
+    text-align: center
+    font-size: 18rem
+    font-weight: 600
+    letter-spacing: 0.9px
+    text-transform: uppercase
+    text-decoration: none
+    border: 2px solid #C482E6
+    border-image: linear-gradient(91deg, #C482E6 4.35%, #FFF 75.25%)
+    border-image-slice: 1
+    // &:before
+    //     content: ""
+    //     position: absolute
+    //     top: -2px
+    //     bottom: -2px
+    //     left: -2px
+    //     right: -2px
+    //     background: linear-gradient(91deg, #C482E6 4.35%, #FFF 75.25%)
+    //     border-radius: 34px
+    //     z-index: -1
+
+.girl-bg-first,
+.girl-bg-second
+    position: absolute
+    height: 70%
+    bottom: 0
+
+.girl-bg-first
+    right: 4.5%
+
+.girl-bg-second
+    right: 17.5%

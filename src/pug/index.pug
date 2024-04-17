@@ -15,6 +15,15 @@ html(lang="uk")
     body 
         header
             include components/header-line.pug
+            .header-general 
+                img.girl-bg-first(src="img/header-girl-1.webp", alt="")
+                img.girl-bg-second(src="img/header-girl-2.webp", alt="")
+                .header-bg
+                    .wrapper
+                        .header-description
+                            h1 Belly Dance
+                            p Наш магазин пропонує широкий вибір товарів, тому всі необхідні речі для занять танцями і гімнастикою ви знайдете у нас в магазині.
+                            a(href="#").button-violet у каталог
         main
             include components/index-popular
             include components/index-new-product
