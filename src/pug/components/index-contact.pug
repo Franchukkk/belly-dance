@@ -1,32 +1,54 @@
 section.contacts 
-    h2.head-section.purple-text контакти
-    .contacts-block 
-        .grafic 
-            p графік роботи
-            .day
-                p Понеділок: 
-                p 10:00 - 19:00
-            .day
-                p Вівторок:
-                p 10:00 - 19:00
-            .day
-                p Середа:
-                p 10:00 - 19:00
-            .day
-                p Четвер:
-                p 10:00 - 19:00
-            .day
-                p Пʼятниця:
-                p 10:00 - 19:00
-            .day
-                p Субота:
-                p 10:00 - 17:00
-            .day
-                p Неділя:
-                p вихідний
-        .contact
-            p Зв’язатися з нами
-            p Контактна особа: 
-                span Анна
-    .map 
+    .wrapper
+        h2.head-section.purple-color контакти
+        .contacts-block.flex-between
+            .grafic 
+                p.head-contact графік роботи
+                .day.flex-between
+                    p Понеділок: 
+                    p 10:00 - 19:00
+                .day.flex-between
+                    p Вівторок:
+                    p 10:00 - 19:00
+                .day.flex-between
+                    p Середа:
+                    p 10:00 - 19:00
+                .day.flex-between
+                    p Четвер:
+                    p 10:00 - 19:00
+                .day.flex-between
+                    p Пʼятниця:
+                    p 10:00 - 19:00
+                .day.flex-between
+                    p Субота:
+                    p 10:00 - 17:00
+                .day.flex-between
+                    p Неділя:
+                    p вихідний
+            .contact
+                p.head-contact Зв’язатися з нами
+                p Контактна особа: 
+                    span Анна
+                p.adress.items-center
+                    span 
+                        +svg("adress", 31, 31)
+                    span вул. Геологів, Старий Ринок, вихід до "Золотої алеї", Хмельницький, Україна
+                .phone.d-flex
+                    p 
+                        a(href="") 067 127 42 12 - роздріб
+                    p 
+                        a(href="") 097 684 34 81 - гурт
+                p.mail 
+                    a(href="") annababyk312@gmail.com
+                .telegram.d-flex
+                    p 
+                        a(href="") 067 127 42 12 - роздріб
+                    p 
+                        a(href="") 097 684 34 81 - гурт
+                .viber.d-flex
+                    p 
+                        a(href="") 067 127 42 12 - роздріб
+                    p 
+                        a(href="") 097 684 34 81 - гурт
+        .map 
 
