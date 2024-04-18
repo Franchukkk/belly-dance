@@ -4,7 +4,9 @@
     padding: 0
 
 html
-    font-size: 1px
+    font-size: 0.8px
+    +media(426)
+        font-size: 1px
 
 body
     font-family: "Montserrat", sans-serif
@@ -38,8 +40,51 @@ a
     display: flex
     flex-wrap: wrap
 
+.relative
+    position: relative
+
 .purple-color
     color: #C482E6
+
+.burger-wrap
+    display: block
+    position: relative
+    width: 40rem
+    height: 40rem
+    transform: translateY(10px)
+    z-index: 20
+    +media(800)
+        display: none
+
+.burger
+    position: relative
+    width: 40rem
+    height: 2rem
+    background: #C482E6
+    z-index: 20
+    transition: 0.5s
+    &::before, &::after
+        content: ''
+        position: absolute
+        width: 40rem
+        height: 2rem 
+        background: #C482E6
+        transition: 0.5s
+    &::before
+        top: -10px
+
+    &::after
+        bottom: -10px
+
+
+.burger.active
+    background-color: transparent
+    &::before
+        top: 0
+        transform: rotate(45deg)
+    &::after
+        top: 0
+        transform: rotate(-45deg)
 
 .header-line
     position: fixed
@@ -47,24 +92,70 @@ a
     width: 100%
     z-index: 10
     background-color: #fff
+    padding-bottom: 55rem
+    +media(800)
+        padding-bottom: 0
 
 .header-line-wrap
     min-height: 110px
 
+.top-navigation.active
+    transition: 0.5s
+    display: block
+    position: absolute
+    top: 0
+    left: 0
+    height: 100vh
+    background-color: #fff
+    z-index: 15
+    min-width: 200px
+    transform: scaleY(1)
+    ul
+        padding-top: 130rem
+        display: block
+        li
+            width: 100%
+            text-align: center
+            margin-bottom: 20px
+            a
+                font-size: 20rem
+
+
 .top-navigation
-    width: 40%
+    transition: 0s
+    transform: scaleY(0)
+    +media(800)
+        transform: scaleY(1)
+        display: block
+    width: 39%
+    +media(870)
+        width: 40%
     +media(1125)
         width: 42%
+    
+
     li
         list-style: none
     li a
+        position: relative
         color: #1E1E1E
         font-family: "Yeseva One"
-        font-size: 13rem
+        font-size: 11rem
         font-weight: 400
         letter-spacing: 0.9rem
         text-transform: uppercase
         text-decoration: none
+        &::before
+            content: ''
+            position: absolute
+            bottom: -5px
+            width: 0%
+            height: 1px
+            background-color: #C482E6
+            transition: 0.5s
+            
+        +media(870)
+            font-size: 13rem
         +media(962)
             font-size: 14rem
         +media(1024)
@@ -72,7 +163,9 @@ a
         +media(1125)
             font-size: 18rem
         &:hover
-            font-weight: 600
+            color: #C482E6
+            &::before
+                width: 100%
     ul
         width: 100%
         column-gap: 10px
@@ -89,10 +182,17 @@ a
     position: relative
     width: 25rem
     height: 22rem
-    background-image: url(../img/basket.svg)
+    background-color: #1E1E1E
+    -webkit-mask-image: url(../img/basket.svg)
+    -webkit-mask-size: contain
+    -webkit-mask-repeat: no-repeat
+    -webkit-mask-position: center
     background-repeat: no-repeat
     background-size: 95%
     cursor: pointer
+    transition: 0.2s
+    &:hover
+        background-color: #C482E6
 
 .basket-counter
     position: absolute
@@ -105,42 +205,65 @@ a
     right: -12px
     background-color: #C482E6
     border-radius: 50%
+    z-index: 2
     span
         color: #000
         font-size: 11rem
         font-weight: 500
 
 .search-container
+    position: absolute
+    left: 50%
+    transform: translateX(-50%)
+    bottom: 25px
+    +media(425)
+        bottom: 20rem
+    +media(800)
+        position: relative
+        left: auto
+        bottom: auto
+        transform: translateX(0)
+
     form
         position: relative
         display: flex
         align-items: stretch
+        
         &::before
             content: ''
             position: absolute
             width: 20rem
             height: 20rem
             background-image: url(../img/loop.svg)
+            background-size: cover
             top: 50%
             left: 12rem
             transform: translateY(-50%)
             cursor: pointer
 
     input[type=text]
+        width: 60vw
+        box-sizing: border-box
         padding-left: 43rem
         padding-right: 10rem
-
-        color: rgba(30, 30, 30, 0.50)
         font-size: 16rem
-        font-style: italic
         font-weight: 300
         border: 1px solid #1E1E1E
         border-right: none
         outline: none
+        &::placeholder
+            color: rgba(30, 30, 30, 0.50)
+            font-style: italic
+        &:focus
+            color: #1E1E1E
+        +media(800)
+            max-width: 160rem
+        +media(1000)
+            max-width: 265rem
 
     button
         padding: 10rem 19rem
-        margin-right: 16px
+
         color: #1E1E1E
         text-align: center
         font-size: 12rem
@@ -150,6 +273,20 @@ a
         border-left: none
         cursor: pointer
         background: #C482E6
+        transition: 0.5s
+        &:hover
+            color: #fff
+            background: linear-gradient(100deg, #C482E6 -1.65%, #1E1E1E 103.18%)
+
+.header-line--btns
+    column-gap: 15px
+    .relative
+        position: absolute
+        right: 5%
+        +media(800)
+            right: auto
+            position: relative
+
 
 .header-general
     position: relative
@@ -207,6 +344,12 @@ h1
     border: 2px solid #C482E6
     border-image: linear-gradient(91deg, #C482E6 4.35%, #FFF 75.25%)
     border-image-slice: 1
+    transition: 0.5s
+
+    &:hover
+        color: #1E1E1E
+        border: 2px solid #C482E6
+        background: linear-gradient(92deg, #C482E6 0%, #FFF 99.25%)
     // &:before
     //     content: ""
     //     position: absolute
@@ -221,11 +364,15 @@ h1
 .girl-bg-first,
 .girl-bg-second
     position: absolute
-    height: 70%
+    height: 50%
     bottom: 0
+    +media(758)
+        height: 70%
 
 .girl-bg-first
-    right: 4.5%
+    right: 0
+    +media(620)
+        right: 4.5%
 
 .girl-bg-second
     right: 17.5%
@@ -387,11 +534,18 @@ h1
     width: 250rem
 
 .category
-    width: 32%
+    width: 100%
     min-width: 277px
-    padding: 8% 0
+    padding: 15% 10px
+    box-sizing: border-box
     background-size: cover
     background-position: center
+    +media(627)
+        padding: 8% 10px
+        width: 48%
+    +media(945)
+        width: 32%
+
 
     h2
         color: #FFF
@@ -401,8 +555,9 @@ h1
         font-weight: 400
         letter-spacing: 3rem
         text-transform: uppercase
-        min-height: 70rem
         margin-bottom: 20px
+        +media(627)
+            min-height: 70rem
     a
         margin: 0 auto
         height: 50rem
@@ -425,18 +580,22 @@ h1
     background: linear-gradient(54deg, #0F0F11 22.96%, #242424 84.96%)
 
 .aboutus
+    flex-wrap: wrap-reverse
+    column-gap: 10rem
     position: relative
 
 .aboutus--image
     display: block
-    width: 48%
+    width: 100%
+    min-height: 50vw
     background-repeat: no-repeat
     background-size: cover
     background-position-y: bottom
     background-position-x: right
     background-image: url(../img/aboutus-lines.svg)
 
-
+    +media(779)
+        width: 48%
     img
         position: absolute
         left: 0
@@ -447,10 +606,14 @@ h1
 
 
 .aboutus--description
+    min-width: 356rem
     margin-right: 5%
-    width: 40%
+    margin-left: 5%
     padding-top: 10%
     padding-bottom: 12%
+    +media(779)
+        width: 40%
+        margin-left: 0
     +media(1300)
         margin-right: 10%
     h2
@@ -466,43 +629,64 @@ h1
     padding-bottom: 105rem
 
 .advantages-table
-    display: table
+    display: block
     border-top: 2px solid #C482E6
     border-bottom: 2px solid #C482E6
     border-image: linear-gradient(90deg, #C482E6 0%, #FFF 100%)
     border-image-slice: 1
+    +media(1020)
+        display: table
 
 .advantages-table--tr
-    display: table-row
+    display: block
+    +media(1020)
+        display: table-row
 
 .advantages-table--td
-    display: table-cell
+    display: block
     border-bottom: 2px solid #C482E6
     border-image: linear-gradient(90deg, #C482E6 0%, rgb(226, 192, 242) 100%)
     border-image-slice: 1
     padding: 40rem 0
+    +media(1020)
+        display: table-cell
 .advantages-table--tr .advantages-table--td:last-child
-    display: table-cell
     border-bottom: 2px solid #C482E6
     border-image: linear-gradient(90deg, rgb(226, 192, 242) 0%, #fff 100%)
     border-image-slice: 1
     padding: 40rem 0
 
 .advantage-content
-    display: flex
+    display: block
     width: 100%
     align-items: center
     column-gap: 30rem
-    border-right: 1px solid #fff
     box-sizing: border-box
+    +media(460)
+        display: flex
+    +media(1020)
+        border-right: 1px solid #fff
+
+    img
+        width: 14%
+        margin-bottom: 20px
+        +media(600)
+            margin-bottom: 0
+            width: auto
+
+    
 
 
 .advantages-table--tr .advantages-table--td:last-child .advantage-content
     border-right: none
-    padding-left: 40rem
+    padding-left: 0
+    +media(1020)
+        padding-left: 40rem
 
 .advantages-table--tr .advantages-table--td:first-child .advantage-content
-    padding-right: 40rem
+    padding-right: 0
+    +media(1020)
+        padding-right: 40rem
 
 
 .advantage-description
