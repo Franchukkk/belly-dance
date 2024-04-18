@@ -34,6 +34,10 @@ a
     display: flex
     align-items: center
 
+.flex-wrap
+    display: flex
+    flex-wrap: wrap
+
 .purple-color
     color: #C482E6
 
@@ -48,20 +52,30 @@ a
     min-height: 110px
 
 .top-navigation
-    width: 42%
+    width: 40%
+    +media(1125)
+        width: 42%
+    li
+        list-style: none
     li a
         color: #1E1E1E
         font-family: "Yeseva One"
-        font-size: 18rem
+        font-size: 13rem
         font-weight: 400
         letter-spacing: 0.9rem
         text-transform: uppercase
         text-decoration: none
+        +media(962)
+            font-size: 14rem
+        +media(1024)
+            font-size: 15rem
+        +media(1125)
+            font-size: 18rem
         &:hover
             font-weight: 600
     ul
         width: 100%
-        column-gap: 15px
+        column-gap: 10px
 
 .logo
     position: absolute
@@ -114,6 +128,7 @@ a
 
     input[type=text]
         padding-left: 43rem
+        padding-right: 10rem
 
         color: rgba(30, 30, 30, 0.50)
         font-size: 16rem
@@ -372,7 +387,8 @@ h1
     width: 250rem
 
 .category
-    width: 33%
+    width: 32%
+    min-width: 277px
     padding: 8% 0
     background-size: cover
     background-position: center
@@ -399,6 +415,8 @@ h1
     background-image: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url(../img/main-nav-3.jpg)
 
 .categories-nav
+
+    row-gap: 25rem
     padding-top: 53rem
     column-gap: 10rem
     margin-bottom: 150rem
@@ -423,14 +441,16 @@ h1
         position: absolute
         left: 0
         bottom: 0
+        width: 45%
+
         
 
 
 .aboutus--description
     margin-right: 5%
     width: 40%
-    padding-top: 110rem
-    padding-bottom: 190rem
+    padding-top: 10%
+    padding-bottom: 12%
     +media(1300)
         margin-right: 10%
     h2
