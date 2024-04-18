@@ -14,9 +14,9 @@
   <body> 
     <header>
       <div class="header-line">
-        <div class="header-line-wrap wrapper flex-between items-center items-center">
+        <div class="header-line-wrap wrapper flex-between items-center items-center flex-wrap">
           <nav class="top-navigation">
-            <ul class="flex-between">
+            <ul class="flex-between flex-wrap">
               <li><a href="#">головна</a></li>
               <li><a href="#">про нас</a></li>
               <li><a href="#">каталог</a></li>
@@ -24,7 +24,7 @@
             </ul>
           </nav>
           <div class="logo"> <img src="img/logo.jpg" alt=""></div>
-          <div class="header-line--btns flex-between items-center">
+          <div class="header-line--btns flex-between items-center flex-wrap">
             <div class="search search-container"><form action="">
 <input type="text" placeholder="пошук" name="search">
 <button type="submit">знайти</button>
@@ -48,6 +48,89 @@
       </div>
     </header>
     <main>
+      <div class="wrapper flex-between categories-nav flex-wrap">
+        <div class="category">
+          <h2>одяг для танців</h2><a class="button-violet sm-btn" href="#">обрати</a>
+        </div>
+        <div class="category">
+          <h2>взуття для танців</h2><a class="button-violet sm-btn" href="#">обрати</a>
+        </div>
+        <div class="category">
+          <h2>аксесуари</h2><a class="button-violet sm-btn" href="#">обрати</a>
+        </div>
+      </div>
+      <div class="aboutus-advantages-bg">
+        <div class="aboutus flex-between">
+          <div class="aboutus--image"><img src="img/aboutus-img.webp" alt=""></div>
+          <div class="aboutus--description">
+            <h2 class="head-section purple-color">про нас</h2>
+            <p>Рух та спорт є невід'ємною частиною нашого життя, тому ми знаємо наскільки важливо підібрати якісний та зручний одяг.</p>
+            <p>Створіть разом з нами, ваше комфортне тренування, придбавши в нас одяг та взуття, для танців і гімнастики.</p>
+            <p>Наш магазин пропонує широкий вибір товарів, тому всі необхідні речі для занять танцями і гімаcтикою ви знайдете у нас в магазині.</p>
+          </div>
+        </div>
+        <div class="advantages"> 
+          <div class="wrapper"> 
+            <h2 class="head-section purple-color">наші переваги</h2>
+            <div class="advantages-table">
+              <div class="advantages-table--tr">
+                <div class="advantages-table--td">
+                  <div class="advantage-content"><img src="img/advantage-ico1.svg" alt="">
+                    <div class="advantage-description"> 
+                      <h2>Ціни від виробника </h2>
+                      <p>Ви заслуговуєте на високоякісні товари за доступну ціну. Наша безпосередня співпраця з виробниками гарантує якість і вигідні ціни одночасно.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="advantages-table--td">
+                  <div class="advantage-content"> <img src="img/advantage-ico2.svg" alt="">
+                    <div class="advantage-description"> 
+                      <h2>великий асортимент</h2>
+                      <p>Ми пишаємося тим, що можемо запропонувати нашим клієнтам широкий вибір продукції в різних категоріях. У нас є все, щоб задовольнити ваші потреби.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="advantages-table--tr">
+                <div class="advantages-table--td">
+                  <div class="advantage-content"> <img src="img/advantage-ico3.svg" alt="">
+                    <div class="advantage-description"> 
+                      <h2>швидка доставка</h2>
+                      <p>Ми розуміємо, наскільки важлива швидка і надійна доставка. Саме тому ми  пропонуємо надійні та ефективні способи доставки.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="advantages-table--td">
+                  <div class="advantage-content"> <img src="img/advantage-ico4.svg" alt="">
+                    <div class="advantage-description"> 
+                      <h2>Продажі гуртом та в роздріб</h2>
+                      <p>Незалежно від вашого обсягу замовлення, у нас є чудові пропозиції, що дозволяють задовольнити всі ваші потреби. Обирайте найкращі пропозиції у каталозі.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="advantages-table--tr">
+                <div class="advantages-table--td">
+                  <div class="advantage-content"> <img src="img/advantage-ico5.svg" alt="">
+                    <div class="advantage-description"> 
+                      <h2>широка розмірна сітка</h2>
+                      <p>Пропонуємо широку розмірну сітку, що дозволяє вам з легкістю знайти потрібний розмір, незалежно від вашої фігури та особливостей.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="advantages-table--td">
+                  <div class="advantage-content"> <img src="img/advantage-ico6.svg" alt="">
+                    <div class="advantage-description"> 
+                      <h2>лише якісні матеріали</h2>
+                      <p>Ми переконані, що ви заслуговуєте на високоякісні товари за доступну ціну. Наша безпосередня співпраця з виробниками гарантує якість і вигідні ціни одночасно.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <section class="popular-mainPage product-main wrapper">
         <h2 class="head-section purple-color">популярні товари</h2>
         <div class="container-popular container">
@@ -1377,7 +1460,8 @@
               </div>
             </div>
           </div>
-          <div class="map"> </div>
+          <div class="map">
+             <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1n0lSznz3KE-vPH_jz1s802u_V-R3cAc&ehbc=2E312F"></iframe></div>
         </div>
       </section>
     </main>
