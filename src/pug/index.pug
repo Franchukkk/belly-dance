@@ -15,7 +15,7 @@ html(lang="uk")
     body 
         include components/mixins
         header
-            include components/header-line.pug
+            include components/header-line
             .header-general 
                 img.girl-bg-first(src="img/header-girl-1.webp", alt="")
                 img.girl-bg-second(src="img/header-girl-2.webp", alt="")
@@ -26,6 +26,10 @@ html(lang="uk")
                             p Наш магазин пропонує широкий вибір товарів, тому всі необхідні речі для занять танцями і гімнастикою ви знайдете у нас в магазині.
                             a(href="#").button-violet у каталог
         main
+            include components/categories-navigation
+            .aboutus-advantages-bg
+                include components/aboutus
+                include components/advantages
             include components/index-popular
             include components/index-new-product
             include components/index-contact
