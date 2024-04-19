@@ -67,7 +67,7 @@ a
         content: ''
         position: absolute
         width: 40rem
-        height: 2rem 
+        height: 2rem
         background: #C482E6
         transition: 0.5s
     &::before
@@ -75,7 +75,6 @@ a
 
     &::after
         bottom: -10px
-
 
 .burger.active
     background-color: transparent
@@ -120,7 +119,6 @@ a
             a
                 font-size: 20rem
 
-
 .top-navigation
     transition: 0s
     transform: scaleY(0)
@@ -132,8 +130,8 @@ a
         width: 40%
     +media(1125)
         width: 42%
-    
-
+.top-navigation,
+.footer-nav
     li
         list-style: none
     li a
@@ -153,7 +151,7 @@ a
             height: 1px
             background-color: #C482E6
             transition: 0.5s
-            
+
         +media(870)
             font-size: 13rem
         +media(962)
@@ -228,7 +226,7 @@ a
         position: relative
         display: flex
         align-items: stretch
-        
+
         &::before
             content: ''
             position: absolute
@@ -287,7 +285,6 @@ a
             right: auto
             position: relative
 
-
 .header-general
     position: relative
 
@@ -299,7 +296,6 @@ a
 
 .header-bg
     padding-top: 195rem
-
 
 .header-description
     position: relative
@@ -409,10 +405,11 @@ h1
 
 .card
     width: 100%
-    max-width: 20vw
     padding: 20rem
     border: 1px solid #1E1E1E
     box-sizing: border-box
+    +media(1250)
+        max-width: 21vw
     img
         width: 100%
         height: 100%
@@ -460,6 +457,7 @@ h1
     letter-spacing: 0.8px
     border: 1px solid #1E1E1E
     box-sizing: border-box
+    transition: all .25s ease
     &:hover
         border: none
         color: #fff
@@ -478,9 +476,9 @@ h1
     text-align: center
     font-size: 18px
     font-weight: 600
-    transition: all .25s ease
     background: linear-gradient(92deg, #C482E6 0%, #C482E6 50%, #C482E6 100%)
     background-size: 200% 100%
+    transition: all .25s ease
     &:hover
         color: #fff
         background-position: 100% 0
@@ -492,15 +490,38 @@ h1
     background: linear-gradient(54deg, #0F0F11 22.96%, #242424 84.96%)
     p, a
         color: #fff
-        font-size: 18px
+        font-size: 14px
         +media(768)
             font-size: 20px
         +media(1024)
             font-size: 24px
+.footer-social,
+.contacts
+    svg
+        transition: all 1s ease
+        path
+            transition: all 1s ease
+            fill: #fff
+        &:hover
+            > path
+                fill: #1E1E1E
+        defs linearGradient stop:first-child 
+                stop-color: #C482E6
+        defs linearGradient stop:last-child 
+                stop-color: #C482E6
+        &:hover defs linearGradient stop:last-child
+            stop-color: #FFF
+.telegram-svg
+    path
+        transform: translate(5rem, 6.5rem)
 
 .contacts-block
+    flex-wrap: wrap
     column-gap: 50rem
+    row-gap: 50rem
     margin-bottom: 50rem
+    +media(768)
+        flex-wrap: nowrap
 
 .head-contact
     margin-bottom: 27rem
@@ -519,17 +540,26 @@ h1
             font-weight: 600
 
 .contact
-    padding-left: 40rem
+    +media(592)
+        max-width: 50vw
+    +media(1024)
+        padding-left: 40rem
     > p
         &:not(:first-child)
             margin-bottom: 20rem
+    a
+        column-gap: 15rem
 
 .adress
     column-gap: 15rem
-    max-width: 45vw
+    +media(768)
+        max-width: 55vw
+    +media(1250)
+        max-width: 45vw
 
 .contacts-icons
     column-gap: 48rem
+    row-gap: 20rem
     margin-bottom: 20rem
 
 .map
@@ -559,7 +589,6 @@ h1
     +media(945)
         width: 32%
 
-
     h2
         color: #FFF
         text-align: center
@@ -583,7 +612,6 @@ h1
     background-image: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url(../img/main-nav-3.jpg)
 
 .categories-nav
-
     row-gap: 25rem
     padding-top: 53rem
     column-gap: 10rem
@@ -615,9 +643,6 @@ h1
         bottom: 0
         width: 45%
 
-        
-
-
 .aboutus--description
     min-width: 356rem
     margin-right: 5%
@@ -637,7 +662,7 @@ h1
         font-weight: 400
         margin-bottom: 20rem
 
-.advantages 
+.advantages
     padding-top: 85rem
     padding-bottom: 105rem
 
@@ -687,9 +712,6 @@ h1
             margin-bottom: 0
             width: auto
 
-    
-
-
 .advantages-table--tr .advantages-table--td:last-child .advantage-content
     border-right: none
     padding-left: 0
@@ -700,7 +722,6 @@ h1
     padding-right: 0
     +media(1020)
         padding-right: 40rem
-
 
 .advantage-description
     h2
@@ -714,4 +735,55 @@ h1
     p
         color: #FFF
         font-size: 18rem
+        font-weight: 400
+
+.footer
+    background: linear-gradient(54deg, #0F0F11 22.96%, #242424 84.96%)
+    hr
+        border: none
+        width: 100%
+        border-top: 3px solid #C482E6
+
+.footer-block
+    row-gap: 30rem
+    justify-content: center
+    padding-top: 90rem
+    column-gap: 30rem
+    +media(1024)
+        justify-content: space-between
+
+.footer-social
+    column-gap: 10px
+    +media(1024)
+        min-width: 200rem
+
+.footer-nav
+    ul
+        column-gap: 15rem
+        +media(768)
+            column-gap: 30rem
+        li
+            a
+                color: #FFF
+                font-family: "Yeseva One"
+                font-size: 14rem
+                font-weight: 400
+                text-transform: uppercase
+
+.privacy
+    a
+        color: #FFF
+        font-size: 14rem
+        font-weight: 500
+        text-decoration: underline
+
+.copy-footer
+    padding: 50rem 0 22rem
+    justify-content: center
+    align-items: center
+    column-gap: 10rem
+    text-align: center
+    span
+        color: #FFF
+        font-size: 14rem
         font-weight: 400
