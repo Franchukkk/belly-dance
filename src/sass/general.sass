@@ -99,6 +99,7 @@ a
 .header-line.hide
     top: -100%
 
+
 .header-line-wrap
     min-height: 110px
 
@@ -274,11 +275,13 @@ a
         border: 1px solid #1E1E1E
         border-left: none
         cursor: pointer
-        background: #C482E6
-        transition: 0.5s
+        background: linear-gradient(92deg, #C482E6 0%, #C482E6 50%,#1E1E1E 100%)
+        background-size: 200% 100%
+        transition: all .25s ease
         &:hover
             color: #fff
-            background: linear-gradient(100deg, #C482E6 -1.65%, #1E1E1E 103.18%)
+            background-position: 100% 0
+            // background: linear-gradient(92deg, #C482E6 0%, #1E1E1E 102.25%, #C482E6 100%)
 
 .header-line--btns
     column-gap: 15px
@@ -344,12 +347,19 @@ h1
     border: 2px solid #C482E6
     border-image: linear-gradient(91deg, #C482E6 4.35%, #FFF 75.25%)
     border-image-slice: 1
-    transition: 0.5s
+    background-position: 0%
+    background: linear-gradient(92deg, transparent 0%, transparent 50%, #C482E6 50%, #FFF 100%)
+    background-size: 210% 100%
+    transition: all 0.25s ease
 
     &:hover
         color: #1E1E1E
-        border: 2px solid #C482E6
-        background: linear-gradient(92deg, #C482E6 0%, #FFF 99.25%)
+        border: 2px solid transparent
+        background-position: 100% 0
+        // background: linear-gradient(92deg, #C482E6 0%, #1E1E1E 102.25%, #C482E6 100%)
+
+
+
     // &:before
     //     content: ""
     //     position: absolute
