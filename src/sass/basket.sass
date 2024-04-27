@@ -213,12 +213,21 @@ p.page-look
     text-transform: lowercase
 
 .check-out-btns
+    row-gap: 20rem
+    flex-wrap: wrap
     padding-top: 27rem
+    +media(500)
+        flex-wrap: nowrap
     button
+        display: flex
+        width: 100%
         font-size: 11px
-        width: 49.5%
-        padding: 12.5rem 5px
+        height: 50px
         text-transform: uppercase
+        align-items: center
+        justify-content: center
+        +media(500)
+            width: 49.5%
         +media(1370)
             font-size: 12px
         +media(1655)
