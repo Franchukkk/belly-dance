@@ -1,0 +1,165 @@
+doctype html
+html(lang="uk")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Belly Dance
+        link(rel="stylesheet", href="css/style.css")
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Yeseva+One&display=swap" rel="stylesheet">
+
+    body 
+        include components/mixins
+        header
+            include components/header-line
+            
+        main
+            .wrapper
+                p.page-look 
+                    a(href="#") головна
+                    a(href="#").selected-page корзина
+                h1.basket-title корзина
+                .flex-between.basket-margin
+                    .products-to-buy 
+                        .product-to-buy--card.flex-between.items-center.relative
+                            .delete-product
+                            .prod-img-description.d-flex
+                                .prod-image
+                                    img(src="img/product-image.jpg", alt="")
+                                .prod--description 
+                                    h3 боді для танців ВІД БРЕНДУ FD conmpany
+                                    ul.d-flex
+                                        li кількість:
+                                        li 
+                                    ul.d-flex
+                                        li колір:
+                                        li чорний
+                                    ul.d-flex
+                                        li розмір:
+                                        li S
+                            .prod-price.items-center 
+                                b 680₴
+                                span 980₴
+                        .product-to-buy--card.flex-between.items-center.relative
+                            .delete-product
+                            .prod-img-description.d-flex
+                                .prod-image
+                                    img(src="img/product-image.jpg", alt="")
+                                .prod--description 
+                                    h3 боді для танців ВІД БРЕНДУ FD conmpany 
+                                    ul.d-flex
+                                        li кількість:
+                                        li 
+                                    ul.d-flex
+                                        li колір:
+                                        li чорний
+                                    ul.d-flex
+                                        li розмір:
+                                        li S
+                            .prod-price.items-center 
+                                b 680₴
+                                span 980₴
+                        .product-to-buy--card.flex-between.items-center.relative
+                            .delete-product
+                            .prod-img-description.d-flex
+                                .prod-image
+                                    img(src="img/product-image.jpg", alt="")
+                                .prod--description 
+                                    h3 боді для танців ВІД БРЕНДУ FD conmpany 
+                                    ul.d-flex
+                                        li кількість:
+                                        li 
+                                    ul.d-flex
+                                        li колір:
+                                        li чорний
+                                    ul.d-flex
+                                        li розмір:
+                                        li S
+                            .prod-price.items-center 
+                                b 680₴
+                                span 980₴
+                        .product-to-buy--card.flex-between.items-center.relative
+                            .delete-product
+                            .prod-img-description.d-flex
+                                .prod-image
+                                    img(src="img/product-image.jpg", alt="")
+                                .prod--description 
+                                    h3 боді для танців ВІД БРЕНДУ FD conmpany 
+                                    ul.d-flex
+                                        li кількість:
+                                        li 
+                                    ul.d-flex
+                                        li колір:
+                                        li чорний
+                                    ul.d-flex
+                                        li розмір:
+                                        li S
+                            .prod-price.items-center 
+                                b 680₴
+                                span 980₴
+                        
+                    .check-out
+                        h3 оформлення замовлення
+                        p 4 товари в корзині
+                        ul.flex-between
+                            li Сума без знижки:
+                            li 3920 грн
+                        ul.flex-between
+                            li Знижка:
+                            li 1200 грн
+                        hr
+                        ul.flex-between.total-price.items-center
+                            li До сплати:
+                            li 2720 грн
+                        p ваші дані:
+                        form(action="")
+                            .flex-between 
+                                label(for="name").w48
+                                    b Імʼя
+                                    input(type="text" id="name")
+                                label(for="firstName").w48
+                                    b Прізвище
+                                    input(type="text" id="firstName")
+                            .flex-between 
+                                label(for="phone").w48
+                                    b Телефон
+                                    input(type="text" id="phone")
+                                label(for="city").w48
+                                    b Місто
+                                    input(type="text" id="city")
+                            label(for="additional") 
+                                b Коментар до замовлення
+                                textarea(name="", cols="30", rows="10", id="additional") 
+                            .delivery-payment-methods.flex-between
+                                .delivery-method
+                                    p Спосіб доставки:
+                                    input(type="radio", name="deliveryMethod", id="newPoszht")
+                                    label(for="newPoszht") Нова пошта у відділення
+                                    input(type="radio", name="deliveryMethod", id="newPoszhtPozhtomat")
+                                    label(for="newPoszhtPozhtomat") Нова пошта у поштомат
+                                    input(type="radio", name="deliveryMethod", id="UkrPoshzta")
+                                    label(for="UkrPoshzta") Укрпошта
+                                    input(type="radio", name="deliveryMethod", id="selfPickup")
+                                    label(for="selfPickup") Самовивіз
+                                .payment-method
+                                    p Спосіб оплати:
+                                    input(type="radio", name="paymentMethod", id="visaMastercard")
+                                    label(for="visaMastercard") Карта Visa/MasterCard 
+                                    input(type="radio", name="paymentMethod", id="byCard")
+                                    label(for="byCard") На карту 
+                                    input(type="radio", name="paymentMethod", id="paymentOnAccount")
+                                    label(for="paymentOnAccount") На рахунок 
+                                    input(type="radio", name="paymentMethod", id="subscription")
+                                    label(for="subscription") Часткова передплата (150₴)
+                            .flex-between.check-out-btns
+                                button(type="submit").cta-catalog  ПІДТВЕРДИТИ
+                                button(type="button").cta-card продовжити покупки
+        footer 
+            include components/footer
+
+        script(src="js/scripts.js") 
+
