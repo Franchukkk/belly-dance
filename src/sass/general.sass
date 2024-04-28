@@ -302,7 +302,7 @@ ul
 
 .header-general
     position: relative
-
+    overflow: hidden
     background-image: url(../img/header-lines-bg.svg)
     background-size: 110%
     background-repeat: no-repeat
@@ -379,21 +379,57 @@ ul
     //     border-radius: 34px
     //     z-index: -1
 
-.girl-bg-first,
-.girl-bg-second
+
+.slider
     position: absolute
-    height: 50%
+    width: 100%
+    height: 70%
+    right: 0
     bottom: 0
+    overflow: hidden
+    +media(425)
+        width: 80%
+    +media(600)
+        width: 70%
+    +media(800)
+        width: 50%
+    +media(1450)
+        height: 90%
+
+.slide
+    position: absolute
+    right: 0
+    bottom: 0
+    transform: translateX(0)
+    transition: all 0.5s ease
+   
+.girl-bg-first
+    position: absolute
+    width: 100%
+    bottom: -10rem
+    object-fit: cover
+    +media(1600)
+        width: 80%
+    // bottom: 0
     +media(758)
-        height: 70%
+        // height: 70%
+
+.image-scale
+    width: 100%
+    +media(1300)
+        width: 90%
 
 .girl-bg-first
-    right: 0
+    // right: 0
     +media(620)
-        right: 4.5%
+        // right: 4.5%
 
-.girl-bg-second
-    right: 17.5%
+// .girl-bg-second
+//     right: 17.5%
+
+.relative-slider
+    width: 100%
+    height: 100%
 
 //popular product new product
 
@@ -812,4 +848,46 @@ ul
 
 
 
+
+
+    
+
+
+
+
+
+
+
+
+.slider
+  position: absolute
+
+.relative-slider
+  position: relative
+  width: 100%
+  height: 100%
+  perspective: 1000px
+
+
+.slide
+  position: absolute
+  width: 100%
+  height: 100%
+  transform-style: preserve-3d
+  transition: transform 1s ease-in-out
+
+
+// .slide img
+//   width: 100%
+//   height: 100%
+//   object-fit: cover
+//   position: absolute
+
+
+.slide:nth-child(odd)
+  transform: translateX(-100%) rotateY(-90deg)
+
+
+.slide:nth-child(even)
+  transform: translateX(100%) rotateY(90deg)
 

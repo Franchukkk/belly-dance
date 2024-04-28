@@ -17,8 +17,14 @@ html(lang="uk")
         header
             include components/header-line
             .header-general 
-                img.girl-bg-first(src="img/header-girl-1.webp", alt="")
-                img.girl-bg-second(src="img/header-girl-2.webp", alt="")
+                .slider.absolute
+                    .relative.relative-slider
+                        .slide.absolute
+                            img.girl-bg-first(src="img/frame1.webp", alt="")
+                        .slide.absolute
+                            img.girl-bg-first(src="img/frame2.webp", alt="")
+                        .slide.absolute
+                            img.girl-bg-first.image-scale(src="img/frame3.webp", alt="")
                 .header-bg
                     .wrapper
                         .header-description
