@@ -1,0 +1,53 @@
+.filter 
+    h2 Фільтр товарів
+    form(action="#" method="post") 
+        p Ціна
+        .filter-range
+            input#min.form-range(type='range' value='500' min='500' max='5000' step='500' oninput='this.nextElementSibling.value = this.value')
+            input.text-range(type='text' value="500" oninput='this.previousElementSibling.value = this.value')
+            input#max.form-range(type='range' value='50000' min='500' max='5000' step='500' oninput='this.nextElementSibling.value = this.value')
+            input.text-range(type='text' value="5000" oninput='this.previousElementSibling.value = this.value')
+        p Категорія
+        .clothes-select 
+            .description-blog
+                a.readmore(href="#") Одяг
+                .description-more
+                    p
+                        input(type="radio" name="clothes" id="id1")
+                        label(for="id1") сукня для латини
+                    p
+                        input(type="radio" name="clothes" id="id2")
+                        label(for="id2") сукня для стандарту
+                    p
+                        input(type="radio" name="clothes" id="id3")
+                        label(for="id3") сукня для фламенко
+        .shoes-select 
+            .description-blog
+                a.readmore(href="#") Взуття
+                .description-more
+                    p
+                        input(type="radio" name="shoes" id="id1-1")
+                        label(for="id1-1") бальне: блок+каблук
+                    p
+                        input(type="radio" name="shoes" id="id2-1")
+                        label(for="id2-1") бальне: жіноча латина
+                    p
+                        input(type="radio" name="shoes" id="id3-1")
+                        label(for="id3-1") бальне: чоловіча латина
+        .accesoires-select 
+            .description-blog
+                a.readmore(href="#") Аксесуари
+                .description-more
+                    p
+                        input(type="radio" name="accesoires" id="id1-2")
+                        label(for="id1-2") для волосся
+                    p
+                        input(type="radio" name="accesoires" id="id2-2")
+                        label(for="id2-2") наколінники
+                    p
+                        input(type="radio" name="accesoires" id="id3-2")
+                        label(for="id3-2") сумки
+        .color 
+            p
+                input(type="checkbox" id="color1")
+                label(for="color1") білий

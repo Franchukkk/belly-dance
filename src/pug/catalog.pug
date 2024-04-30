@@ -1,0 +1,61 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="css/style.css")
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Yeseva+One&display=swap" rel="stylesheet">
+        title Каталог товарів
+    body 
+        header
+            include components/header-line
+            .wrapper
+                p.page-look 
+                    a(href="index.html") головна
+                    a(href="#").selected-page каталог
+        main 
+            .baner-catalog.clothes-baner.flex-between.black-fon
+                .svg-baner
+                    picture 
+                        img(src="img/group.svg", alt="")
+                .text-baner 
+                    h1 одяг для танців
+                    p.description-baner Завойовуйте сцену з нашою колекцією стильного та функціонального одягу для танців. Незалежно від вашого стилю — бальних танців, сучасного, хіп-хопу чи театрального танцю — ми маємо все необхідне, щоб ви виглядали і відчували себе найкраще під час кожного виступу.
+                .svg-baner
+                    picture 
+                        img(src="img/group-white.svg", alt="")
+            .baner-catalog.shoes-baner.flex-between.black-fon
+                .svg-baner
+                    picture 
+                        img(src="img/group.svg", alt="")
+                .text-baner 
+                    h1 Взуття для танців
+                    p.description-baner Незалежно від вашого стилю та рівня майстерності, ми пропонуємо вам вибір високоякісного взуття, яке забезпечить комфорт та підтримку під час ваших тренувань і виступів.
+                .svg-baner
+                    picture 
+                        img(src="img/group-white.svg", alt="")
+
+            .baner-catalog.accessories-baner.flex-between.black-fon
+                .svg-baner
+                    picture 
+                        img(src="img/group.svg", alt="")
+                .text-baner 
+                    h1 аксесуари для танців
+                    p.description-baner Додайте шарму та індивідуальності до своїх танцювальних виступів за допомогою наших стильних танцювальних аксесуарів. Створіть незабутній образ для кожного виступу з Belly Dance!
+                .svg-baner
+                    picture 
+                        img(src="img/group-white.svg", alt="")
+            .catalog-page.wrapper.flex-between 
+                include components/filter-catalog
+                include components/catalog-product
+
+
+
+        footer 
+            include components/footer
+    script(src="js/scripts.js") 
