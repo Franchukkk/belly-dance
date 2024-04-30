@@ -1,0 +1,251 @@
+@import components/mixins
+
+p.page-look 
+    padding-top: 100px
+    margin-bottom: 25rem
+    a
+        color: #1E1E1E
+        font-size: 14rem
+        font-weight: 300
+    a:last-child
+        font-weight: 500
+    +media(800)
+        padding-top: 27rem
+
+.selected-page
+    position: relative
+    padding-left: 40px
+    &::before
+        content: ''
+        position: absolute
+        width: 6.5rem
+        height: 6.5rem
+        top: 50%
+        left: 15rem
+        border-bottom: 1px solid #1E1E1E
+        border-right: 1px solid #1E1E1E
+        transform: rotate(-45deg) translateY(-50%)
+
+.basket-title
+    font-family: Montserrat
+    font-size: 36px
+    font-weight: 700
+    letter-spacing: 1.8rem
+    text-transform: uppercase
+    color: #1E1E1E
+    margin-bottom: 40rem
+
+.products-to-buy 
+    width: 100%
+    +media(1000)
+        width: 55%
+
+.product-to-buy--card
+    row-gap: 20px
+    flex-wrap: wrap
+    width: 100%
+    padding: 25rem 20rem
+    box-sizing: border-box
+    border: 1px solid #D9D9D9
+    margin-bottom: 10px
+    +media(500)
+        flex-wrap: nowrap
+    h3 
+        color: #1E1E1E
+        font-size: 16rem
+        font-weight: 700
+        letter-spacing: 0.8rem
+        text-transform: uppercase
+        margin-bottom: 20rem
+    ul 
+        column-gap: 10px
+        li
+            color: #1E1E1E
+            font-size: 12rem
+            font-weight: 500
+            line-height: 100%
+            margin-bottom: 15rem
+            &:last-child
+                font-weight: 400
+
+.prod-image
+    width: 120rem
+    max-height: 150rem
+    overflow-y: hidden
+
+.prod-img-description 
+    row-gap: 20px
+    flex-wrap: wrap
+    column-gap: 20rem
+    +media(500)
+        flex-wrap: nowrap
+    img
+        width: 100%
+        object-fit: cover
+
+.prod-price
+    column-gap: 7rem
+    b
+        color: #1E1E1E
+        font-size: 24rem
+        font-weight: 700
+        line-height: 1.2em
+        text-transform: uppercase
+    span
+        color: rgba(30, 30, 30, 0.50)
+        font-size: 16rem
+        font-weight: 300
+        line-height: 1.2em
+        text-decoration-line: line-through
+        text-transform: uppercase
+
+.delete-product
+    position: absolute
+    width: 10px
+    height: 10px
+    background-image: url(../img/cross.svg)
+    top: 25rem
+    right: 20rem
+    cursor: pointer
+        
+
+
+.check-out
+    width: 100%
+    box-sizing: border-box
+    padding: 50rem 30rem
+    border: 1px solid #D9D9D9
+    +media(1000)
+        width: 43%
+
+    h3
+        color: #1E1E1E
+        text-align: center
+        font-size: 24rem
+        font-weight: 700
+        letter-spacing: 1.2rem
+        text-transform: uppercase
+        margin-bottom: 26rem
+
+    p
+        color: #1E1E1E
+        font-size: 16rem
+        font-weight: 600
+        text-transform: uppercase
+        margin-bottom: 20rem
+
+    ul li
+        color: #1E1E1E
+        font-size: 16rem
+        font-weight: 500
+        margin-bottom: 13rem
+
+
+    .total-price li
+        color: #C482E6
+        font-size: 18rem
+        font-weight: 700
+        text-transform: uppercase
+
+    hr
+        border: none
+        border-bottom: 1px solid #D9D9D9
+        padding-top: 13rem
+        margin-bottom: 25rem
+
+    b
+        display: block
+        color: #1E1E1E
+        font-size: 14rem
+        font-weight: 600
+        margin-bottom: 10rem
+
+    
+
+    input, textarea
+        display: block
+        width: 100%
+        outline: none
+        border: 1px solid #D9D9D9
+        padding: 12.5rem
+        box-sizing: border-box
+        resize: none
+        margin-bottom: 19rem
+
+    textarea
+        margin-bottom: 35rem
+
+    input[type="radio"]
+        display: none
+    input[type="radio"] + label 
+        display: block
+        position: relative
+        color: #1E1E1E
+        font-size: 14rem
+        font-weight: 400
+        padding-left: 25rem
+        margin-bottom: 12rem
+        &::before
+            content: ''
+            position: absolute
+            width: 15px
+            height: 15px
+            border: 1px solid #1E1E1E
+            left: 0
+        &::after
+            content: ''
+            display: none
+            position: absolute
+            width: 7px
+            height: 4px
+            border-bottom: 1px solid #1E1E1E
+            border-left: 1px solid #1E1E1E
+            transform: rotate(-45deg)
+            left: 4.5px
+            top: 4.5px
+    input[type="radio"]:checked + label:after
+        display: block
+            
+.total-price li:last-child
+    color: #1E1E1E
+    font-size: 24px
+    font-weight: 700
+    text-transform: lowercase
+
+.check-out-btns
+    row-gap: 20rem
+    flex-wrap: wrap
+    padding-top: 27rem
+    +media(500)
+        flex-wrap: nowrap
+    button
+        display: flex
+        width: 100%
+        font-size: 11px
+        height: 50px
+        text-transform: uppercase
+        align-items: center
+        justify-content: center
+        +media(500)
+            width: 49.5%
+        +media(1370)
+            font-size: 12px
+        +media(1655)
+            font-size: 18px
+    button[type="button"]
+        background-color: #fff
+
+.basket-margin
+    flex-wrap: wrap
+    margin-bottom: 100px
+
+.delivery-payment-methods
+    flex-wrap: wrap
+    column-gap: 10px
+    row-gap: 20px
+    +media(1135)
+        flex-wrap: nowrap
+
+
+.prod--description
+    max-width: 70%
