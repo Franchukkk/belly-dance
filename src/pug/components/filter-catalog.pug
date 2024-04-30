@@ -1,13 +1,13 @@
 .filter 
     h2 Фільтр товарів
     form(action="#" method="post") 
-        p Ціна
+        p.header-filter Ціна
         .filter-range
             input#min.form-range(type='range' value='500' min='500' max='5000' step='500' oninput='this.nextElementSibling.value = this.value')
             input.text-range(type='text' value="500" oninput='this.previousElementSibling.value = this.value')
             input#max.form-range(type='range' value='50000' min='500' max='5000' step='500' oninput='this.nextElementSibling.value = this.value')
             input.text-range(type='text' value="5000" oninput='this.previousElementSibling.value = this.value')
-        p Категорія
+        p.header-filter Категорія
         .clothes-select 
             .description-blog
                 a.readmore(href="#") Одяг
@@ -48,6 +48,7 @@
                         input(type="radio" name="accesoires" id="id3-2")
                         label(for="id3-2") сумки
         .color 
+            p.header-filter Колір
             p
                 input(type="checkbox" id="color1")
                 label(for="color1") білий
