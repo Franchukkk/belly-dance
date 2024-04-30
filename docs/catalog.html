@@ -155,8 +155,20 @@
           </form>
         </div>
         <section class="catalog-card">
-          <div class="sort-select"> 
-            <select></select>
+          <div class="sort-select items-center">
+            <p>сортувати:</p>
+            <label class="arrow-select">
+              <div class="select">
+                <input class="select__input" type="hidden">
+                <div class="select__in">за замовчуванням</div>
+                <div class="select__list">
+                  <div class="select__item" data-value="2">ціна за спаданням</div>
+                  <div class="select__item" data-value="3">ціна за зростанням</div>
+                  <div class="select__item" data-value="4">за новизною</div>
+                  <div class="select__item" data-value="5">за популярністю</div>
+                </div>
+              </div>
+            </label>
           </div>
           <div class="container-popular container catalog-container">
             <div class="popular-card card">
@@ -232,6 +244,13 @@
               <div class="cta-card-block"><a class="cta-card text-style-card" href="">в корзину</a></div>
             </div>
           </div>
+          <div class="items-center pagination"> <a class="pagination-button cta-prev" href="#">
+               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+<path d="M12 14L8 10L12 6" stroke="#1E1E1E" stroke-linecap="round"/>
+</svg></a><a class="pagination-button page current-page" href="#"> <span>1</span></a><a class="pagination-button page" href="#"> <span>2</span></a><a class="pagination-button page" href="#"> <span>3</span></a><span class="separator-pag">...</span><a class="pagination-button page" href="#"> <span>20</span></a><a class="pagination-button cta-next" href="#">
+               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+<path d="M8 6L12 10L8 14" stroke="#1E1E1E" stroke-linecap="round"/>
+</svg></a></div>
         </section>
       </div>
     </main>
