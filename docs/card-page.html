@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Картка товару</title>
     <link rel="stylesheet" href="css/style.css"><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Yeseva+One&display=swap" rel="stylesheet">
-    <title>Каталог товарів</title>
   </head>
   <body> 
-    <header>
+    <header> 
       <div class="header-line">
         <div class="header-line-wrap wrapper flex-between items-center items-center flex-wrap">
           <div class="burger-wrap">
@@ -39,136 +39,94 @@
         </div>
       </div>
       <div class="wrapper">
-        <p class="page-look"> <a href="index.html">головна</a><a class="selected-page" href="#">каталог</a></p>
+        <p class="page-look"> <a href="index.html">головна</a><a class="selected-page" href="catalog.html">каталог</a><a class="selected-page" href="index.html">одяг</a><a class="selected-page" href="index.html">боді для танців</a></p>
       </div>
     </header>
     <main> 
-      <div class="baner-catalog clothes-baner flex-between black-fon">
-        <div class="svg-baner">
-          <picture> <img src="img/group.svg" alt=""></picture>
-        </div>
-        <div class="text-baner"> 
-          <h1>одяг для танців</h1>
-          <p class="description-baner">Завойовуйте сцену з нашою колекцією стильного та функціонального одягу для танців. Незалежно від вашого стилю — бальних танців, сучасного, хіп-хопу чи театрального танцю — ми маємо все необхідне, щоб ви виглядали і відчували себе найкраще під час кожного виступу.</p>
-        </div>
-        <div class="svg-baner">
-          <picture> <img src="img/group-white.svg" alt=""></picture>
-        </div>
-      </div>
-      <div class="baner-catalog shoes-baner flex-between black-fon">
-        <div class="svg-baner">
-          <picture> <img src="img/group.svg" alt=""></picture>
-        </div>
-        <div class="text-baner"> 
-          <h1>Взуття для танців</h1>
-          <p class="description-baner">Незалежно від вашого стилю та рівня майстерності, ми пропонуємо вам вибір високоякісного взуття, яке забезпечить комфорт та підтримку під час ваших тренувань і виступів.</p>
-        </div>
-        <div class="svg-baner">
-          <picture> <img src="img/group-white.svg" alt=""></picture>
-        </div>
-      </div>
-      <div class="baner-catalog accessories-baner flex-between black-fon">
-        <div class="svg-baner">
-          <picture> <img src="img/group.svg" alt=""></picture>
-        </div>
-        <div class="text-baner"> 
-          <h1>аксесуари для танців</h1>
-          <p class="description-baner">Додайте шарму та індивідуальності до своїх танцювальних виступів за допомогою наших стильних танцювальних аксесуарів. Створіть незабутній образ для кожного виступу з Belly Dance!</p>
-        </div>
-        <div class="svg-baner">
-          <picture> <img src="img/group-white.svg" alt=""></picture>
-        </div>
-      </div>
-      <div class="catalog-page wrapper">
-        <div class="filter"> 
-          <h2>Фільтр товарів</h2>
-          <form action="#" method="post"> 
-            <p class="header-filter">Ціна</p>
-            <div class="filter-range">
-              <input class="form-range" id="min" type="range" value="500" min="500" max="5000" step="500" oninput="this.nextElementSibling.value = this.value">
-              <input class="text-range" type="text" value="500" oninput="this.previousElementSibling.value = this.value">
-              <input class="form-range" id="max" type="range" value="50000" min="500" max="5000" step="500" oninput="this.nextElementSibling.value = this.value">
-              <input class="text-range" type="text" value="5000" oninput="this.previousElementSibling.value = this.value">
-            </div>
-            <p class="header-filter">Категорія</p>
-            <div class="clothes-select"> 
-              <div class="description-blog"><a class="readmore" href="#">Одяг</a>
-                <div class="description-more">
-                  <p>
-                    <input type="radio" name="clothes" id="id1">
-                    <label for="id1">сукня для латини</label>
-                  </p>
-                  <p>
-                    <input type="radio" name="clothes" id="id2">
-                    <label for="id2">сукня для стандарту</label>
-                  </p>
-                  <p>
-                    <input type="radio" name="clothes" id="id3">
-                    <label for="id3">сукня для фламенко</label>
-                  </p>
-                </div>
+      <div class="wrapper">
+        <div class="card-main"> 
+          <div class="img-block"> 
+            <div class="small-img"> 
+              <div class="small-img-parent">
+                <picture> <img class="small-image" src="img/card1.jpg" alt=""></picture>
+              </div>
+              <div class="small-img-parent">
+                <picture> <img class="small-image" src="img/card2.jpg" alt=""></picture>
+              </div>
+              <div class="small-img-parent">
+                <picture> <img class="small-image" src="img/card3.jpg" alt=""></picture>
               </div>
             </div>
-            <div class="shoes-select"> 
-              <div class="description-blog"><a class="readmore" href="#">Взуття</a>
-                <div class="description-more">
-                  <p>
-                    <input type="radio" name="shoes" id="id1-1">
-                    <label for="id1-1">бальне: блок+каблук</label>
-                  </p>
-                  <p>
-                    <input type="radio" name="shoes" id="id2-1">
-                    <label for="id2-1">бальне: жіноча латина</label>
-                  </p>
-                  <p>
-                    <input type="radio" name="shoes" id="id3-1">
-                    <label for="id3-1">бальне: чоловіча латина</label>
-                  </p>
-                </div>
+            <div class="main-img">
+              <picture> <img class="main-card-img" src="img/card.png" alt=""></picture>
+            </div>
+          </div>
+          <div class="text-block">
+            <h1>боді для танців ВІД БРЕНДУ FD conmpany</h1>
+            <div class="price-block items-center">
+              <p class="full-price">680₴</p>
+              <p class="old-price">980₴</p>
+            </div>
+            <div class="haracteristic-block"> 
+              <ul class="flex-between">
+                <li>Гуртові ціни:<span>від 10 штук</span></li>
+                <li>Модель:<span>987 654</span></li>
+                <li>Наявність:<span>в наявності</span></li>
+                <li>Матеріал:<span>Стрейч-кулір</span></li>
+                <li>Країна-виробник:<span>Україна</span></li>
+                <li>Склад:<span>95% бавовна, 5% поліестр</span></li>
+              </ul>
+            </div>
+            <div class="description-blog card-description"><a class="readmore" href="#">Опис </a>
+              <div class="description-more">
+                <p>Lorem ipsum dolor sit amet consectetur. Integer molestie cursus ultricies consectetur quis in faucibus viverra varius. Eu varius pharetra vel pellentesque id lorem purus. Penatibus condimentum tortor nisi pharetra nam nibh. Viverra aenean ornare odio elit.</p>
               </div>
             </div>
-            <div class="accesoires-select"> 
-              <div class="description-blog"><a class="readmore" href="#">Аксесуари</a>
-                <div class="description-more">
-                  <p>
-                    <input type="radio" name="accesoires" id="id1-2">
-                    <label for="id1-2">для волосся</label>
-                  </p>
-                  <p>
-                    <input type="radio" name="accesoires" id="id2-2">
-                    <label for="id2-2">наколінники</label>
-                  </p>
-                  <p>
-                    <input type="radio" name="accesoires" id="id3-2">
-                    <label for="id3-2">сумки</label>
-                  </p>
-                </div>
+            <div class="description-blog card-description"><a class="readmore" href="#">Доставка та оплата </a>
+              <div class="description-more">
+                <p>Доставка в будь-яку точку України за допомогою компаній експрес-доставки "Нова пошта" та "Укрпошта". Термін доставки замовленого товару - від 1 до 4 днів. Оплата під час отримання товару, безготівковий для юридичних та фізичних осіб, оплата карткою Visa/MasterCard. Мінімальна передплата - 150 ₴.  Доставка бажаного кольору до 5 днів</p>
               </div>
             </div>
-            <div class="color"> 
-              <p class="header-filter">Колір</p>
-              <p>
-                <input type="checkbox" id="color1">
-                <label for="color1">білий</label>
-              </p>
+            <div class="description-blog card-description"><a class="readmore" href="#">Гарантія </a>
+              <div class="description-more">
+                <p>Обмін/повернення товару впродовж 14 днів. Обов'язковою умовою обміну і повернення є те, що одяг, взуття та інші куплені в нашому магазині товари не були у вжитку, і мають всі супровідні документи (ярлики, упаковка та інше)</p>
+              </div>
             </div>
-          </form>
+            <div class="form-card flex-benween"> 
+              <div class="size"> <span>Розмір:</span>
+                <input type="checkbox" id="size1" name="xs">
+                <label for="size1">XS</label>
+                <input type="checkbox" id="size2" name="s">
+                <label for="size2">S</label>
+                <input type="checkbox" id="size3" name="m">
+                <label for="size3">M</label>
+                <input type="checkbox" id="size4" name="l">
+                <label for="size4">L</label>
+              </div>
+              <div class="color-card"> <span>Колір:</span>
+                <label class="arrow-select"></label>
+                <div class="select">
+                  <input class="select__input" type="hidden">
+                  <div class="select__in">01 чорний</div>
+                  <div class="select__list">
+                    <div class="select__item" data-value="2">01 чорний</div>
+                    <div class="select__item" data-value="3">01 чорний</div>
+                    <div class="select__item" data-value="4">01 чорний</div>
+                    <div class="select__item" data-value="5">01 чорний</div>
+                  </div>
+                </div>
+              </div>
+              <div class="count"> <span>Кількість:</span><a class="min" href="#">-</a><a class="number" href="#">1</a><a class="max" href="#">+</a></div>
+            </div>
+            <div class="cta-catalog-clock"> <a class="cta-catalog text-style-card" href="#">в корзину</a></div>
+          </div>
         </div>
-        <section class="catalog-card">
-          <div class="sort-select items-center">
-            <p>сортувати:</p>
-            <label class="arrow-select">
-              <div class="select">
-                <input class="select__input" type="hidden">
-                <div class="select__in">за замовчуванням</div>
-                <div class="select__list">
-                  <div class="select__item" data-value="2">ціна за спаданням</div>
-                  <div class="select__item" data-value="3">ціна за зростанням</div>
-                  <div class="select__item" data-value="4">за новизною</div>
-                  <div class="select__item" data-value="5">за популярністю</div>
-                </div>
-              </div>
-            </label>
+        <div class="table"> 
+          <p>Розмірна сітка</p>
+        </div>
+        <div class="same-card"> 
+          <div class="text-baner"> 
+            <h2>схожі товари</h2>
           </div>
           <div class="container-popular container catalog-container">
             <figure>
@@ -186,14 +144,8 @@
               </figcaption>
             </figure>
           </div>
-          <div class="items-center pagination"> <a class="pagination-button cta-prev" href="#">
-               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-<path d="M12 14L8 10L12 6" stroke="#1E1E1E" stroke-linecap="round"/>
-</svg></a><a class="pagination-button page current-page" href="#"> <span>1</span></a><a class="pagination-button page" href="#"> <span>2</span></a><a class="pagination-button page" href="#"> <span>3</span></a><span class="separator-pag">...</span><a class="pagination-button page" href="#"> <span>20</span></a><a class="pagination-button cta-next" href="#">
-               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-<path d="M8 6L12 10L8 14" stroke="#1E1E1E" stroke-linecap="round"/>
-</svg></a></div>
-        </section>
+          <div class="cta-catalog-clock"> <a class="cta-catalog text-style-card" href="#">більше</a></div>
+        </div>
       </div>
     </main>
     <footer> 
@@ -254,6 +206,6 @@
         </div>
       </div>
     </footer>
+    <script src="js/scripts.js"> </script>
   </body>
-  <script src="js/scripts.js"> </script>
 </html>

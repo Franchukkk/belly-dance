@@ -1,0 +1,126 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Картка товару
+        link(rel="stylesheet", href="css/style.css")
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Yeseva+One&display=swap" rel="stylesheet">
+
+    body 
+        include components/mixins
+        header 
+            include components/header-line
+            .wrapper
+                p.page-look 
+                    a(href="index.html") головна
+                    a(href="catalog.html").selected-page каталог
+                    a(href="index.html").selected-page одяг
+                    a(href="index.html").selected-page боді для танців
+        main 
+            .wrapper
+                .card-main 
+                    .img-block 
+                        .small-img 
+                            .small-img-parent
+                                picture 
+                                    img.small-image(src="img/card1.jpg", alt="")
+                            .small-img-parent
+                                picture 
+                                    img.small-image(src="img/card2.jpg", alt="")
+                            .small-img-parent
+                                picture 
+                                    img.small-image(src="img/card3.jpg", alt="")
+                        .main-img
+                            picture 
+                                img.main-card-img(src="img/card.png", alt="")
+                    .text-block
+                        h1 боді для танців ВІД БРЕНДУ FD conmpany
+                        .price-block.items-center
+                            p.full-price 680₴
+                            p.old-price 980₴
+                        .haracteristic-block 
+                            ul.flex-between
+                                li Гуртові ціни:
+                                    span від 10 штук
+                                li Модель:
+                                    span 987 654
+                                li Наявність:
+                                    span в наявності
+                                li Матеріал:
+                                    span Стрейч-кулір
+                                li Країна-виробник:
+                                    span Україна
+                                li Склад:
+                                    span 95% бавовна, 5% поліестр
+                        .description-blog.card-description
+                            a.readmore(href="#") Опис 
+                            .description-more
+                                p Lorem ipsum dolor sit amet consectetur. Integer molestie cursus ultricies consectetur quis in faucibus viverra varius. Eu varius pharetra vel pellentesque id lorem purus. Penatibus condimentum tortor nisi pharetra nam nibh. Viverra aenean ornare odio elit.
+                        .description-blog.card-description
+                            a.readmore(href="#") Доставка та оплата 
+                            .description-more
+                                p Доставка в будь-яку точку України за допомогою компаній експрес-доставки "Нова пошта" та "Укрпошта". Термін доставки замовленого товару - від 1 до 4 днів. Оплата під час отримання товару, безготівковий для юридичних та фізичних осіб, оплата карткою Visa/MasterCard. Мінімальна передплата - 150 ₴.  Доставка бажаного кольору до 5 днів
+                        .description-blog.card-description
+                            a.readmore(href="#") Гарантія 
+                            .description-more
+                                p Обмін/повернення товару впродовж 14 днів. Обов'язковою умовою обміну і повернення є те, що одяг, взуття та інші куплені в нашому магазині товари не були у вжитку, і мають всі супровідні документи (ярлики, упаковка та інше)
+                        .form-card.flex-benween 
+                            .size 
+                                span Розмір:
+                                input(type="checkbox" id="size1" name="xs")
+                                label(for="size1") XS
+                                input(type="checkbox" id="size2" name="s")
+                                label(for="size2") S
+                                input(type="checkbox" id="size3" name="m")
+                                label(for="size3") M
+                                input(type="checkbox" id="size4" name="l")
+                                label(for="size4") L
+                            .color-card 
+                                span Колір:
+                                label.arrow-select
+                                .select
+                                    input(type='hidden').select__input
+                                    .select__in 01 чорний
+                                    .select__list
+                                        .select__item(data-value='2') 01 чорний
+                                        .select__item(data-value='3') 01 чорний
+                                        .select__item(data-value='4') 01 чорний
+                                        .select__item(data-value='5') 01 чорний
+                            .count 
+                                span Кількість:
+                                a.min(href="#") -
+                                a.number(href="#") 1
+                                a.max(href="#") +
+                        .cta-catalog-clock 
+                            a.cta-catalog.text-style-card(href="#") в корзину
+                .table 
+                    p Розмірна сітка
+                .same-card 
+                    .text-baner 
+                        h2 схожі товари
+                    .container-popular.container.catalog-container
+                        figure
+                            figcaption.popular-card.card
+                                a.mask(href="card-page.html") 
+                                .img-card
+                                    picture 
+                                        img(src="img/card.png", alt="")
+                                p.in-stock.purple-color в наявності
+                                p.card-head.text-style-card боді для танців ВІД БРЕНДУ FD conmpany
+                                .price-card.items-center 
+                                    p.full-price.text-style-card 680₴
+                                    p.old-price.text-style-card 980₴
+                                .cta-card-block
+                                    a.cta-card.text-style-card(href="") в корзину
+                    .cta-catalog-clock 
+                        a.cta-catalog.text-style-card(href="#") більше
+        footer 
+            include components/footer
+
+        script(src="js/scripts.js") 
