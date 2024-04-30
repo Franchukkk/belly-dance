@@ -175,36 +175,36 @@ p.page-look
     textarea
         margin-bottom: 35rem
 
-    input[type="radio"]
+input.checkbox
+    display: none
+.checkbox + label 
+    display: block
+    position: relative
+    color: #1E1E1E
+    font-size: 14rem
+    font-weight: 400
+    padding-left: 25rem
+    margin-bottom: 12rem
+    &::before
+        content: ''
+        position: absolute
+        width: 15px
+        height: 15px
+        border: 1px solid #1E1E1E
+        left: 0
+    &::after
+        content: ''
         display: none
-    input[type="radio"] + label 
-        display: block
-        position: relative
-        color: #1E1E1E
-        font-size: 14rem
-        font-weight: 400
-        padding-left: 25rem
-        margin-bottom: 12rem
-        &::before
-            content: ''
-            position: absolute
-            width: 15px
-            height: 15px
-            border: 1px solid #1E1E1E
-            left: 0
-        &::after
-            content: ''
-            display: none
-            position: absolute
-            width: 7px
-            height: 4px
-            border-bottom: 1px solid #1E1E1E
-            border-left: 1px solid #1E1E1E
-            transform: rotate(-45deg)
-            left: 4.5px
-            top: 4.5px
-    input[type="radio"]:checked + label:after
-        display: block
+        position: absolute
+        width: 7px
+        height: 4px
+        border-bottom: 1px solid #1E1E1E
+        border-left: 1px solid #1E1E1E
+        transform: rotate(-45deg)
+        left: 4.5px
+        top: 4.5px
+.checkbox:checked + label:after
+    display: block
             
 .total-price li:last-child
     color: #1E1E1E
