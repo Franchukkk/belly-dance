@@ -7,6 +7,8 @@ html
     font-size: 0.8px
     +media(426)
         font-size: 1px
+    +media(2000)
+        font-size: 1.8px
 
 body
     font-family: "Montserrat", sans-serif
@@ -303,11 +305,17 @@ ul
 .header-general
     position: relative
     overflow: hidden
-    background-image: url(../img/header-lines-bg.svg)
-    background-size: 110%
-    background-repeat: no-repeat
-    background-position-y: bottom
+    // background-image: url(../img/header-lines-bg.svg)
+    // background-size: 110%
+    // background-repeat: no-repeat
+    // background-position-y: bottom
     padding-bottom: 215px
+
+    .waves
+        position: absolute
+        width: 100%
+        height: 220rem
+        overflow: hidden
 
 .header-bg
     padding-top: 195rem
@@ -402,7 +410,8 @@ h1
     bottom: 0
     transform: translateX(0)
     transition: all 0.5s ease
-   
+    z-index: 100 !important
+
 .girl-bg-first
     position: absolute
     width: 100%
@@ -412,6 +421,7 @@ h1
     // min-height: 70%
     bottom: -10rem
     object-fit: cover
+    
     // +media(485)
     //     max-height: 60%
     //     min-height: 40%
@@ -704,15 +714,20 @@ h1
     position: relative
 
 .aboutus--image
+    position: relative
     display: block
     width: 100%
     min-height: 50vw
-    background-repeat: no-repeat
-    background-size: cover
-    background-position-y: bottom
-    background-position-x: right
-    background-image: url(../img/aboutus-lines.svg)
 
+    // background-repeat: no-repeat
+    // background-size: cover
+    // background-position-y: bottom
+    // background-position-x: right
+    // background-image: url(../img/aboutus-lines.svg)
+    .waves 
+        height: 100%
+        position: relative
+        overflow: hidden
     +media(779)
         width: 48%
     img
@@ -720,6 +735,8 @@ h1
         left: 0
         bottom: 0
         width: 45%
+        +media(779)
+            width: 90%
 
 .aboutus--description
     min-width: 356rem
@@ -880,8 +897,8 @@ h1
 
 
 .slider
-  position: absolute
-
+    position: absolute
+    z-index: 1
 .relative-slider
   position: relative
   width: 100%
@@ -920,3 +937,54 @@ h1
 
 .small-slide-img
     width: 80%
+
+
+
+
+.waves svg
+    position: absolute
+    z-index: 0
+    height: 400rem
+    width: 100%
+    &:first-child
+        bottom: -200rem
+    &:nth-child(2)
+        bottom: -150rem
+    &:nth-child(3)
+        bottom: -100rem
+    &:nth-child(4)
+        bottom: -50rem
+    &:nth-child(5)
+        bottom: 0rem
+    &:nth-child(6)
+        bottom: 50rem
+    &:nth-child(7)
+        bottom: 100rem
+    &:nth-child(8)
+        bottom: 150rem
+    &:nth-child(9)
+        bottom: 200rem
+    &:nth-child(10)
+        bottom: 250rem
+    &:nth-child(11)
+        bottom: 300rem
+    &:nth-child(12)
+        bottom: 350rem
+    &:nth-child(13)
+        bottom: 400rem
+    &:nth-child(14)
+        bottom: 450rem
+    &:nth-child(15)
+        bottom: 500rem
+    &:nth-child(16)
+        bottom: 550rem
+    &:nth-child(17)
+        bottom: 600rem
+    &:nth-child(18)
+        bottom: 650rem
+    &:nth-child(19)
+        bottom: 700rem
+    &:nth-child(20)
+        bottom: 750rem
+    &:nth-child(21)
+        bottom: 800rem
