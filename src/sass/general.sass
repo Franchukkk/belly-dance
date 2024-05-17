@@ -925,14 +925,15 @@ h1
 
 .slide
   transform: translateX(100%) rotateY(90deg)
+  z-index: 10 !important
+.slide:nth-child(2n)
+  z-index: 9 !important
 
 .first-slide
     transform: translateX(-40%) rotateY(0deg) !important
-    z-index: 9
 
 .second-slide
-    background-color: green
-    opacity: 0.5
+    transform: translateX(10%) rotateY(0deg) !important
 
 
 .small-slide-img
