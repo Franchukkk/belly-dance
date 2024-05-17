@@ -89,96 +89,46 @@ document.addEventListener('keyup', e => {
         })
     }
 })
-window.addEventListener("resize", function () {
-    setTimeout(() => {
-        slaiderComment()
-    }, 0)
-})
-if (document.querySelector(".carousel-card")) {
-    const carousel = document.querySelector('.carousel-card'),
-        prevButton = document.querySelector('.btn-prev'),
-        nextButton = document.querySelector('.btn-next')
 
-    let items = [...document.querySelectorAll(".carousel-item")],
-        currentIndex
-    if (items.length > 3) {
 
-        prevButton.style.display = "block"
-        nextButton.style.display = "block"
-        const itemWidth = items[0].offsetHeight + 5
+const sliderContainer = document.querySelector('.carousel-card'),
+    sliderImages = [...document.querySelectorAll('.carousel-item')],
+    btnSlider = document.querySelectorAll(".btn")
+imageHeight = sliderImages[0].offsetHeight
 
-        let isAnimating = false
-
-        function updateCarousel() {
-            const firstClone = items[items.length - 1].cloneNode(true)
-            firstClone.style.transform = `translateY: (-${itemWidth}px)`
-            carousel.insertAdjacentElement("afterbegin", firstClone)
-            while (carousel.firstChild) {
-                carousel.removeChild(carousel.firstChild)
-            }
-            for (let i = 0; i < items.length; i++) {
-                items[i].style.transform = `translateY(-${itemWidth}px)`
-            }
-
-            for (let i = 0; i < items.length; i++) {
-                const item = items[i].cloneNode(true)
-                item.style.transform = `translateX: (${i} * ${itemWidth}px)`
-                carousel.appendChild(item)
-            }
-        }
-
-        updateCarousel()
-
-        function goToIndex(index) {
-            isAnimating = true
-
-            const distance = -index * itemWidth
-
-            currentIndex = (currentIndex + items.length + index) % items.length
-
-            carousel.style.transition = 'transform .5s ease-in-out'
-            carousel.style.transform = `translateY(${distance}rem)`
-
-            setTimeout(() => {
-                carousel.style.transition = 'none'
-                carousel.style.transform = 'none'
-                isAnimating = false
-                updateCarousel()
-            }, 500)
-        }
-
-        nextButton.addEventListener('click', (e) => {
-            e.preventDefault()
-            items.push(items.shift())
-            goToIndex(1)
-        })
-
-        prevButton.addEventListener('click', (e) => {
-            e.preventDefault()
-            items.unshift(items.pop())
-            goToIndex(-1)
-        })
-
-        let touchStartX = 0,
-            touchEndX = 0
-
-        carousel.addEventListener('touchstart', (e) => {
-            touchStartX = e.touches[0].clientX
-        })
-
-        carousel.addEventListener('touchmove', (e) => {
-            touchEndX = e.touches[0].clientX
-        })
-
-        carousel.addEventListener('touchend', () => {
-            const touchDiff = touchStartX - touchEndX
-            if (touchDiff > 50) {
-                items.push(items.shift())
-                goToIndex(1)
-            } else if (touchDiff < -50) {
-                items.unshift(items.pop())
-                goToIndex(-1)
-            }
-        })
+let currentSlide = 0
+btnSlider.forEach(itemBtn => {
+    if (sliderImages.length > 3) {
+        itemBtn.style.display = "block"
+    } else {
+        itemBtn.style.display = "none"
     }
+})
+
+function nextSlide(e) {
+    e.preventDefault()
+    if (currentSlide < sliderImages.length - 3) {
+        currentSlide++
+        sliderContainer.style.transition = 'transform 0.3s ease-in-out'
+        sliderContainer.style.transform = `translateY(-${currentSlide * imageHeight}px)`
+    }
+}
+
+function prevSlide(e) {
+    e.preventDefault()
+    if (currentSlide > 0) {
+        currentSlide--
+        sliderContainer.style.transition = 'transform 0.3s ease-in-out'
+        sliderContainer.style.transform = `translateY(-${currentSlide * imageHeight}px)`
+    }
+}
+
+const nextButton = document.querySelector('.btn-next')
+if (nextButton) {
+    nextButton.addEventListener('click', nextSlide)
+}
+
+const prevButton = document.querySelector('.btn-prev')
+if (prevButton) {
+    prevButton.addEventListener('click', prevSlide)
 }
