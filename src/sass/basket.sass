@@ -14,17 +14,21 @@ p.page-look
 
 .selected-page
     position: relative
-    padding-left: 40px
+    padding-left: 25px
+    +media(400)
+        padding-left: 40px
     &::before
         content: ''
         position: absolute
         width: 6.5rem
         height: 6.5rem
         top: 50%
-        left: 15rem
+        left: 12.5rem
         border-bottom: 1px solid #1E1E1E
         border-right: 1px solid #1E1E1E
         transform: rotate(-45deg) translateY(-50%)
+        +media(400)
+            left: 15rem
 
 .basket-title
     font-family: Montserrat

@@ -53,6 +53,9 @@ ul
 .w48
     width: 48%
 
+.d-block
+    display: block
+
 .purple-color
     color: #C482E6
 
@@ -562,7 +565,7 @@ h1
 .cta-catalog
     display: inline-block
     padding: 21rem 21rem
-    width: 100%
+    width: 90%
     max-width: 365rem
     color: #1E1E1E
     text-align: center
@@ -572,6 +575,8 @@ h1
     background-position: 0 0
     background-size: 200% 
     transition: all .5s ease
+    +media(400)
+        width: 100%
     &:hover
         color: #fff
         background-position: 100% 0
@@ -931,16 +936,16 @@ h1
 
 .first-slide
     transform: translateX(-40%) rotateY(0deg) !important
+    +media(425)
+        transform: translateX(-50%) rotateY(0deg) !important
 
 .second-slide
-    transform: translateX(10%) rotateY(0deg) !important
-
+    transform: translateX(15%) rotateY(0deg) !important
+    +media(425)
+        transform: translateX(0%) rotateY(0deg) !important
 
 .small-slide-img
     width: 80%
-
-
-
 
 .waves svg
     position: absolute
