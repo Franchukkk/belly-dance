@@ -73,6 +73,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+
+    if (document.querySelector(".products-sm")) {
+        let productImages = document.querySelectorAll('.products-sm img'),
+            generalImg = document.querySelector('.general-img img')
+
+        productImages.forEach(function (image) {
+            image.addEventListener('click', function () {
+                let clickedImageUrl = this.src
+                generalImg.src = clickedImageUrl
+
+            })
+        })
+    }
+
 })
 
 const btnReadMore = document.querySelectorAll(".readmore")
