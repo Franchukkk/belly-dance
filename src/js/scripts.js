@@ -68,7 +68,8 @@ document.addEventListener("DOMContentLoaded", function () {
             currentSlideIndex = currentSlideIndex < slides.length - 2 ? currentSlideIndex += 2 : 0
 
         }
-
+        setTimeout(changeSlide, 0)
+        // changeSlide()
         setInterval(changeSlide, 3000)
 
     }
