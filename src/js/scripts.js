@@ -150,45 +150,54 @@ document.addEventListener('keyup', e => {
     }
 })
 
+function slider() {
+    const sliderContainer = document.querySelector('.carousel-card'),
+        sliderImages = [...document.querySelectorAll('.carousel-item')],
+        btnSlider = document.querySelectorAll(".btn")
 
-const sliderContainer = document.querySelector('.carousel-card'),
-    sliderImages = [...document.querySelectorAll('.carousel-item')],
-    btnSlider = document.querySelectorAll(".btn")
-imageHeight = sliderImages[0].offsetHeight
+    let imageHeight = sliderImages[0].offsetHeight
 
-let currentSlide = 0
-btnSlider.forEach(itemBtn => {
-    if (sliderImages.length > 3) {
-        itemBtn.style.display = "block"
-    } else {
-        itemBtn.style.display = "none"
+    let currentSlide = 0
+    btnSlider.forEach(itemBtn => {
+        if (sliderImages.length > 3) {
+            itemBtn.style.display = "block"
+        } else {
+            itemBtn.style.display = "none"
+        }
+    })
+
+    function nextSlide(e) {
+        e.preventDefault()
+        if (currentSlide < sliderImages.length - 3) {
+            currentSlide++
+            sliderContainer.style.transition = 'transform 0.3s ease-in-out'
+            sliderContainer.style.transform = `translateY(-${currentSlide * imageHeight}px)`
+        }
     }
-})
 
-function nextSlide(e) {
-    e.preventDefault()
-    if (currentSlide < sliderImages.length - 3) {
-        currentSlide++
-        sliderContainer.style.transition = 'transform 0.3s ease-in-out'
-        sliderContainer.style.transform = `translateY(-${currentSlide * imageHeight}px)`
+    function prevSlide(e) {
+        e.preventDefault()
+        if (currentSlide > 0) {
+            currentSlide--
+            sliderContainer.style.transition = 'transform 0.3s ease-in-out'
+            sliderContainer.style.transform = `translateY(-${currentSlide * imageHeight}px)`
+        }
     }
-}
 
-function prevSlide(e) {
-    e.preventDefault()
-    if (currentSlide > 0) {
-        currentSlide--
-        sliderContainer.style.transition = 'transform 0.3s ease-in-out'
-        sliderContainer.style.transform = `translateY(-${currentSlide * imageHeight}px)`
+    const nextButton = document.querySelector('.btn-next')
+    if (nextButton) {
+        nextButton.addEventListener('click', nextSlide)
     }
-}
 
-const nextButton = document.querySelector('.btn-next')
-if (nextButton) {
-    nextButton.addEventListener('click', nextSlide)
-}
+    const prevButton = document.querySelector('.btn-prev')
+    if (prevButton) {
+        prevButton.addEventListener('click', prevSlide)
+    }
 
-const prevButton = document.querySelector('.btn-prev')
-if (prevButton) {
-    prevButton.addEventListener('click', prevSlide)
+}
+if (document.querySelector(".img-block")) {
+    slider()
+    window.addEventListener('resize', () => {
+        slider()
+    })
 }

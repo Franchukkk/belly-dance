@@ -8,7 +8,7 @@
 
 .img-block
     display: grid
-    grid-template-columns: 20% 73%
+    grid-template-columns: 120rem 73%
     grid-column-gap: 20rem
     margin-bottom: 30rem
     max-height: 500rem
@@ -41,8 +41,10 @@
 
 .small-img-parent
     width: 100%
+    min-width: 100rem
+    min-height: 170rem
     img
-        max-height: 160rem
+        max-height: 200rem
         object-fit: cover
 
 .btn
@@ -163,8 +165,10 @@
         max-width: 150rem
     .select__in
         &::after
-            right: 50px
+            right: 32px
             transform: translateY(-80%) rotate(225deg)
+            +media(768)
+                right: 50rem
     .select__item, .select__in
         position: relative
         margin-left: 20rem
@@ -233,6 +237,8 @@
     padding: 87rem 0 100rem
     .card
         min-width: 21vw
+        +media(1250)
+            min-width: 19vw
     .text-baner
         max-width: none
     h2
