@@ -1,12 +1,32 @@
 @import components/mixins
 .baner-catalog
     padding: 48rem 0 35rem
+    
     img
         width: 100%
         height: 100%
+.svg-baner
+    position: absolute
+    bottom: 11vw
+    width: 100%
+    height: 100rem
+    overflow: hidden
+    z-index: 0
+    +media(375)
+        bottom: 23vw
+    +media(375)
+        bottom: 24vw
+    +media(768)
+        position: relative
+        bottom: 0
+        height: auto
+        
+.white-svg-baner
+    display: none
+    +media(768)
+        display: block
 
 .text-baner
-
     h1, h2
         margin-bottom: 14rem
         color: #C482E6
@@ -17,7 +37,7 @@
             font-size: 54px
         +media(1440)
             font-size: 64px
-    +media(640)
+    +media(768)
         max-width: 48vw
         padding: 0 38rem
 
@@ -61,7 +81,6 @@
 
 
 .cross
-    .close-popup
     position: absolute
     display: inline-block
     top: 20rem

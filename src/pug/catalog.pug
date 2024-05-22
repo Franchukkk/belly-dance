@@ -14,6 +14,7 @@ html(lang="en")
     body 
         header
             include components/header-line
+            include components/wave
             .wrapper
                 p.page-look 
                     a(href="index.html") головна
@@ -23,35 +24,79 @@ html(lang="en")
                 span Фільтр
             .baner-catalog.clothes-baner.flex-between.black-fon
                 .svg-baner
-                    picture 
-                        img(src="img/group.svg", alt="")
+                    .waves
+                        +wave("3s", '1.5')
+                        +wave("3.2s", '1.5')
+                        +wave("3.4s", '1.5')
+                        +wave("3.6s", '1.5')
+                        +wave("3.8s", '1.5')
+                        +wave("4s", '1.5')
+                        +wave("4.2s", '1.5')
+                        +wave("4.4s", '1.5')
+                    //- picture  
+                    //-     img(src="img/group.svg", alt="")
                 .text-baner 
                     h1 одяг для танців
                     p.description-baner Завойовуйте сцену з нашою колекцією стильного та функціонального одягу для танців. Незалежно від вашого стилю — бальних танців, сучасного, хіп-хопу чи театрального танцю — ми маємо все необхідне, щоб ви виглядали і відчували себе найкраще під час кожного виступу.
-                .svg-baner
-                    picture 
-                        img(src="img/group-white.svg", alt="")
-            .baner-catalog.shoes-baner.flex-between.black-fon
-                .svg-baner
-                    picture 
-                        img(src="img/group.svg", alt="")
-                .text-baner 
-                    h1 Взуття для танців
-                    p.description-baner Незалежно від вашого стилю та рівня майстерності, ми пропонуємо вам вибір високоякісного взуття, яке забезпечить комфорт та підтримку під час ваших тренувань і виступів.
-                .svg-baner
-                    picture 
-                        img(src="img/group-white.svg", alt="")
+                .svg-baner.white-svg-baner
+                    .waves
+                        +wave("3s", '1.5')
+                        +wave("3.2s", '1.5')
+                        +wave("3.4s", '1.5')
+                        +wave("3.6s", '1.5')
+                        +wave("3.8s", '1.5')
+                        +wave("4s", '1.5')
+                        +wave("4.2s", '1.5')
+                        +wave("4.4s", '1.5')
+            //- .baner-catalog.shoes-baner.flex-between.black-fon
+            //-     .svg-baner
+            //-         .waves
+            //-             +wave("3s", '1.5')
+            //-             +wave("3.2s", '1.5')
+            //-             +wave("3.4s", '1.5')
+            //-             +wave("3.6s", '1.5')
+            //-             +wave("3.8s", '1.5')
+            //-             +wave("4s", '1.5')
+            //-             +wave("4.2s", '1.5')
+            //-             +wave("4.4s", '1.5')
+            //-     .text-baner 
+            //-         h1 Взуття для танців
+            //-         p.description-baner Незалежно від вашого стилю та рівня майстерності, ми пропонуємо вам вибір високоякісного взуття, яке забезпечить комфорт та підтримку під час ваших тренувань і виступів.
+            //-     .svg-baner
+            //-         .waves
+            //-             +wave("3s", '1.5')
+            //-             +wave("3.2s", '1.5')
+            //-             +wave("3.4s", '1.5')
+            //-             +wave("3.6s", '1.5')
+            //-             +wave("3.8s", '1.5')
+            //-             +wave("4s", '1.5')
+            //-             +wave("4.2s", '1.5')
+            //-             +wave("4.4s", '1.5')
 
-            .baner-catalog.accessories-baner.flex-between.black-fon
-                .svg-baner
-                    picture 
-                        img(src="img/group.svg", alt="")
-                .text-baner 
-                    h1 аксесуари для танців
-                    p.description-baner Додайте шарму та індивідуальності до своїх танцювальних виступів за допомогою наших стильних танцювальних аксесуарів. Створіть незабутній образ для кожного виступу з Belly Dance!
-                .svg-baner
-                    picture 
-                        img(src="img/group-white.svg", alt="")
+            //- .baner-catalog.accessories-baner.flex-between.black-fon
+            //-     .svg-baner
+            //-         .waves
+            //-             +wave("3s", '1.5')
+            //-             +wave("3.2s", '1.5')
+            //-             +wave("3.4s", '1.5')
+            //-             +wave("3.6s", '1.5')
+            //-             +wave("3.8s", '1.5')
+            //-             +wave("4s", '1.5')
+            //-             +wave("4.2s", '1.5')
+            //-             +wave("4.4s", '1.5')
+            //-     .text-baner 
+            //-         h1 аксесуари для танців
+            //-         p.description-baner Додайте шарму та індивідуальності до своїх танцювальних виступів за допомогою наших стильних танцювальних аксесуарів. Створіть незабутній образ для кожного виступу з Belly Dance!
+            //-     .svg-baner
+            //-         .waves
+            //-             +wave("3s", '1.5')
+            //-             +wave("3.2s", '1.5')
+            //-             +wave("3.4s", '1.5')
+            //-             +wave("3.6s", '1.5')
+            //-             +wave("3.8s", '1.5')
+            //-             +wave("4s", '1.5')
+            //-             +wave("4.2s", '1.5')
+            //-             +wave("4.4s", '1.5')
             .catalog-page.wrapper
                 include components/filter-catalog
                 include components/catalog-product
