@@ -87,6 +87,25 @@ document.addEventListener("DOMContentLoaded", function () {
             })
         })
     }
+    if (document.querySelector(".privacy-policy")) {
+
+        let privacyPopup = document.querySelector(".privacy-policy"),
+            privacyOpen = document.querySelector(".privacy a")
+
+        function privacyPopupToggle () {
+            privacyPopup.classList.toggle("d-none")
+        }
+       
+        back.addEventListener("click", function(e) {
+            e.preventDefault()
+            privacyPopupToggle()
+        })
+        privacyOpen.addEventListener("click", function(e) {
+            e.preventDefault()
+            privacyPopupToggle()
+        })
+
+    }
 
 })
 
