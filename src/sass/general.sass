@@ -571,8 +571,8 @@ h1
 .cta-catalog
     display: inline-block
     padding: 21rem 21rem
-    width: 90%
-    max-width: 365rem
+    width: 100%
+    max-width: 365px
     color: #1E1E1E
     text-align: center
     font-size: 18px
@@ -581,8 +581,7 @@ h1
     background-position: 0 0
     background-size: 200% 
     transition: all .5s ease
-    +media(400)
-        width: 100%
+    box-sizing: border-box
     &:hover
         color: #fff
         background-position: 100% 0
