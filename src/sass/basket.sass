@@ -3,11 +3,18 @@
 p.page-look 
     padding-top: 100px
     margin-bottom: 25rem
-    a
+    a, span
+        display: inline-block
         color: #1E1E1E
         font-size: 14rem
         font-weight: 300
-    a:last-child
+        cursor: pointer
+        transition: .3s
+        &:hover
+            transform: scale(1.1)
+            // font-weight: 500
+            
+    span
         font-weight: 500
     +media(800)
         padding-top: 27rem

@@ -72,8 +72,9 @@ ul
 .burger
     position: relative
     width: 40rem
-    height: 2rem
-    background: #C482E6
+    height: 25rem
+    border-top: 2rem solid #C482E6
+    // background: #C482E6
     z-index: 20
     transition: 0.5s
     &::before, &::after
@@ -84,13 +85,13 @@ ul
         background: #C482E6
         transition: 0.5s
     &::before
-        top: -10px
+        top: 10rem
 
     &::after
-        bottom: -10px
+        top: 20rem
 
 .burger.active
-    background-color: transparent
+    border-top: none
     &::before
         top: 0
         transform: rotate(45deg)
@@ -236,6 +237,7 @@ ul
     left: 50%
     transform: translateX(-50%)
     bottom: 25px
+    border-radius: 0
     +media(425)
         bottom: 20rem
     +media(800)
@@ -271,6 +273,7 @@ ul
         border: 1px solid #1E1E1E
         border-right: none
         outline: none
+        border-radius: 0
         &::placeholder
             color: rgba(30, 30, 30, 0.50)
             font-style: italic
