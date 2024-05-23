@@ -28,6 +28,50 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     }
 
+    if (document.querySelector("#phone")) {
+
+        function isValidPhoneNumber(phoneNumber) {
+            // Регулярний вираз для перевірки формату номеру телефону +380xxxxxxxxx
+            const phoneRegex = /\+380[0-9]{9}$/;
+            return phoneRegex.test(phoneNumber);
+        }
+
+        let userPhoneInput = document.querySelector("#phone");
+
+        // Додаємо префікс +380 при завантаженні сторінки
+        userPhoneInput.value = "+380";
+
+        userPhoneInput.addEventListener('input', function (event) {
+            // Забороняємо видалення префіксу +380
+            if (!userPhoneInput.value.startsWith("+380")) {
+                userPhoneInput.value = "+380";
+            }
+
+            // Видаляємо всі не цифрові символи після +380 та обмежуємо довжину до 9 цифр
+            let digits = userPhoneInput.value.slice(4).replace(/\D/g, '');
+            if (digits.length > 9) {
+                digits = digits.slice(0, 9);
+            }
+            userPhoneInput.value = "+380" + digits;
+        });
+
+        userPhoneInput.addEventListener('keydown', function (event) {
+            // Забороняємо користувачеві видаляти символи з префіксу +380
+            if (userPhoneInput.selectionStart < 4 && (event.key === 'Backspace' || event.key === 'Delete')) {
+                event.preventDefault();
+            }
+        });
+
+        // Додатково можна додати валідацію при відправці форми
+        document.querySelector("form").addEventListener("submit", function (event) {
+            if (!isValidPhoneNumber(userPhoneInput.value)) {
+                event.preventDefault();
+                alert("Невірний формат номера телефону. Має бути +380XXXXXXXXX");
+            }
+        });
+
+    }
+
 
     if (document.querySelector(".cross")) {
         // alert("dsa")
@@ -92,15 +136,15 @@ document.addEventListener("DOMContentLoaded", function () {
         let privacyPopup = document.querySelector(".privacy-policy"),
             privacyOpen = document.querySelector(".privacy a")
 
-        function privacyPopupToggle () {
+        function privacyPopupToggle() {
             privacyPopup.classList.toggle("d-none")
         }
-       
-        back.addEventListener("click", function(e) {
+
+        back.addEventListener("click", function (e) {
             e.preventDefault()
             privacyPopupToggle()
         })
-        privacyOpen.addEventListener("click", function(e) {
+        privacyOpen.addEventListener("click", function (e) {
             e.preventDefault()
             privacyPopupToggle()
         })

@@ -200,13 +200,11 @@ input.checkbox
         content: ''
         display: none
         position: absolute
-        width: 7px
-        height: 4px
-        border-bottom: 1px solid #1E1E1E
-        border-left: 1px solid #1E1E1E
-        transform: rotate(-45deg)
-        left: 4.5px
-        top: 4.5px
+        width: 12px
+        height: 12px
+        background-color: #C482E6
+        left: 2.5px
+        top: 2.5px
 .checkbox:checked + label:after
     display: block
             
@@ -230,6 +228,8 @@ input.checkbox
         text-transform: uppercase
         align-items: center
         justify-content: center
+        &:first-child
+            border: none
         +media(500)
             width: 49.5%
         +media(1370)
