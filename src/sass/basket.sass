@@ -211,17 +211,27 @@ input.checkbox
         height: 15px
         border: 1px solid #1E1E1E
         left: 0
-    // &::after
-    //     content: ''
-    //     display: none
-    //     position: absolute
-    //     width: 12px
-    //     height: 12px
-    //     background-color: #C482E6
-    //     left: 2.5px
-    //     top: 2.5px
-.checkbox:checked + label:before
+    &::after
+        content: ''
+        display: none
+        position: absolute
+        width: 7px
+        height: 5px
+        border-bottom: 1px solid #000
+        border-left: 1px solid #000
+        transform: rotate(-45deg)
+        top: 4px
+        left: 4.5px
+        
+.checkbox:checked + label:after
+    display: block
+
+
+.checkbox.radio:checked + label:before
     background-color: #C482E6
+
+.checkbox.radio:checked + label:after
+    display: none
             
 .total-price li:last-child
     color: #1E1E1E
