@@ -232,17 +232,17 @@ function slider() {
 
     function nextSlide(e) {
         e.preventDefault()
-        if (currentSlide < sliderImages.length - 3) {
-            currentSlide++
+        if (currentSlide > 0) {
+            currentSlide--
             sliderContainer.style.transition = 'transform 0.3s ease-in-out'
             sliderContainer.style.transform = `translateY(-${currentSlide * imageHeight}px)`
         }
     }
-
+    
     function prevSlide(e) {
         e.preventDefault()
-        if (currentSlide > 0) {
-            currentSlide--
+        if (currentSlide < sliderImages.length - 3) {
+            currentSlide++
             sliderContainer.style.transition = 'transform 0.3s ease-in-out'
             sliderContainer.style.transform = `translateY(-${currentSlide * imageHeight}px)`
         }
