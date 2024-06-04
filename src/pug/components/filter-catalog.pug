@@ -5,11 +5,16 @@
     h2 Фільтр товарів
     form(action="#" method="post") 
         p.header-filter Ціна
-        .filter-range
-            input#min.form-range(type='range' value='500' min='500' max='5000' step='500' oninput='this.nextElementSibling.value = this.value')
-            input.text-range(type='text' value="500" oninput='this.previousElementSibling.value = this.value')
-            input#max.form-range(type='range' value='50000' min='500' max='5000' step='500' oninput='this.nextElementSibling.value = this.value')
-            input.text-range(type='text' value="5000" oninput='this.previousElementSibling.value = this.value')
+            .slider-range
+                .range#range
+                .values
+                    span#min-value 0
+                    span#max-value 1000
+                .handle#min-handle
+                .handle#max-handle
+            form(method="post" action="index.php")
+                input(type="hidden" id="min-price" name="min_price")
+                input(type="hidden" id="max-price" name="max_price")
         p.header-filter Категорія
         .clothes-select 
             .description-blog

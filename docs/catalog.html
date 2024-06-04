@@ -652,13 +652,18 @@
           </div>
           <h2>Фільтр товарів</h2>
           <form action="#" method="post"> 
-            <p class="header-filter">Ціна</p>
-            <div class="filter-range">
-              <input class="form-range" id="min" type="range" value="500" min="500" max="5000" step="500" oninput="this.nextElementSibling.value = this.value">
-              <input class="text-range" type="text" value="500" oninput="this.previousElementSibling.value = this.value">
-              <input class="form-range" id="max" type="range" value="50000" min="500" max="5000" step="500" oninput="this.nextElementSibling.value = this.value">
-              <input class="text-range" type="text" value="5000" oninput="this.previousElementSibling.value = this.value">
-            </div>
+            <p class="header-filter">Ціна
+              <div class="slider-range">
+                <div class="range" id="range"></div>
+                <div class="values"><span id="min-value">0</span><span id="max-value">1000</span></div>
+                <div class="handle" id="min-handle"></div>
+                <div class="handle" id="max-handle"></div>
+              </div>
+              <form method="post" action="index.php">
+                <input type="hidden" id="min-price" name="min_price">
+                <input type="hidden" id="max-price" name="max_price">
+              </form>
+            </p>
             <p class="header-filter">Категорія</p>
             <div class="clothes-select"> 
               <div class="description-blog"><a class="readmore" href="#">Одяг</a>

@@ -76,6 +76,9 @@ html(lang="uk")
                                     label(for="UkrPoshzta") Укрпошта
                                     input(class="checkbox radio" type="radio", name="deliveryMethod", id="selfPickup")
                                     label(for="selfPickup") Самовивіз
+                                    label.numbPost 
+                                        span № відділення/поштомату
+                                        input(type="text")
                                 .payment-method
                                     p Спосіб оплати:
                                     input(class="checkbox radio" type="radio", name="paymentMethod", id="visaMastercard")

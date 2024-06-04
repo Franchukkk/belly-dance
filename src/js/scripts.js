@@ -238,7 +238,7 @@ function slider() {
             sliderContainer.style.transform = `translateY(-${currentSlide * imageHeight}px)`
         }
     }
-    
+
     function prevSlide(e) {
         e.preventDefault()
         if (currentSlide < sliderImages.length - 3) {
@@ -263,5 +263,87 @@ if (document.querySelector(".img-block")) {
     slider()
     window.addEventListener('resize', () => {
         slider()
+    })
+}
+
+if (document.querySelector('.slider-range')) {
+    const slider = document.querySelector('.slider-range'),
+        minHandle = document.querySelector('#min-handle'),
+        maxHandle = document.querySelector('#max-handle'),
+        range = document.querySelector('#range'),
+        minPriceInput = document.querySelector('#min-price'),
+        maxPriceInput = document.querySelector('#max-price'),
+        minValueSpan = document.querySelector('#min-value'),
+        maxValueSpan = document.querySelector('#max-value'),
+        sliderWidth = slider.offsetWidth,
+        handleWidth = minHandle.offsetWidth
+
+    let minPrice = 0,
+        maxPrice = 1000
+
+    function updateRange() {
+        const minPos = minHandle.offsetLeft,
+            maxPos = maxHandle.offsetLeft
+
+        range.style.left = minPos + 'px'
+        range.style.width = (maxPos - minPos) + 'px'
+
+        const minValue = Math.round(minPrice + (minPos / (sliderWidth - handleWidth)) * (maxPrice - minPrice)),
+            maxValue = Math.round(minPrice + (maxPos / (sliderWidth - handleWidth)) * (maxPrice - minPrice))
+        minPriceInput.value = minValue
+        maxPriceInput.value = maxValue
+        minValueSpan.textContent = minValue
+        maxValueSpan.textContent = maxValue
+    }
+
+    function handleDrag(e, handle) {
+        e.preventDefault()
+
+        const handleStartX = event.clientX || event.touches[0].clientX
+        const handleStartLeft = handle.offsetLeft
+
+        const onMove = (moveEvent) => {
+            const moveX = moveEvent.clientX || moveEvent.touches[0].clientX
+            let newLeft = moveX - handleStartX + handleStartLeft
+
+            if (handle === minHandle) {
+                newLeft = Math.max(0, Math.min(newLeft, maxHandle.offsetLeft - handleWidth))
+            } else {
+                newLeft = Math.max(minHandle.offsetLeft + handleWidth, Math.min(newLeft, sliderWidth - handleWidth))
+            }
+
+            handle.style.left = newLeft + 'px'
+            updateRange()
+        }
+
+        const onEnd = () => {
+            document.removeEventListener('mousemove', onMove)
+            document.removeEventListener('mouseup', onEnd)
+            document.removeEventListener('touchmove', onMove)
+            document.removeEventListener('touchend', onEnd)
+        }
+
+        document.addEventListener('mousemove', onMove)
+        document.addEventListener('mouseup', onEnd)
+        document.addEventListener('touchmove', onMove)
+        document.addEventListener('touchend', onEnd)
+    }
+
+    minHandle.addEventListener('mousedown', (event) => handleDrag(event, minHandle))
+    maxHandle.addEventListener('mousedown', (event) => handleDrag(event, maxHandle))
+    minHandle.addEventListener('touchstart', (event) => handleDrag(event, minHandle))
+    maxHandle.addEventListener('touchstart', (event) => handleDrag(event, maxHandle))
+
+    updateRange()
+
+}
+
+if (document.querySelector(".radio")) {
+    const radio = document.querySelectorAll(".delivery-method .radio"),
+        numbPost = document.querySelector(".numbPost")
+    radio.forEach(radio => {
+        radio.addEventListener('change', function () {
+            numbPost.style.display = "block"
+        })
     })
 }
