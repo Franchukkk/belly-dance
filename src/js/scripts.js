@@ -265,7 +265,7 @@ if (document.querySelector(".img-block")) {
         slider()
     })
 }
-
+//кастомний рендж для ціни
 if (document.querySelector('.slider-range')) {
     const slider = document.querySelector('.slider-range'),
         minHandle = document.querySelector('#min-handle'),
@@ -299,7 +299,7 @@ if (document.querySelector('.slider-range')) {
     function handleDrag(e, handle) {
         e.preventDefault()
 
-        const handleStartX = event.clientX || event.touches[0].clientX
+        const handleStartX = e.clientX || e.touches[0].clientX
         const handleStartLeft = handle.offsetLeft
 
         const onMove = (moveEvent) => {
@@ -329,21 +329,44 @@ if (document.querySelector('.slider-range')) {
         document.addEventListener('touchend', onEnd)
     }
 
-    minHandle.addEventListener('mousedown', (event) => handleDrag(event, minHandle))
-    maxHandle.addEventListener('mousedown', (event) => handleDrag(event, maxHandle))
-    minHandle.addEventListener('touchstart', (event) => handleDrag(event, minHandle))
-    maxHandle.addEventListener('touchstart', (event) => handleDrag(event, maxHandle))
+    minHandle.addEventListener('mousedown', (e) => handleDrag(e, minHandle))
+    maxHandle.addEventListener('mousedown', (e) => handleDrag(e, maxHandle))
+    minHandle.addEventListener('touchstart', (e) => handleDrag(e, minHandle))
+    maxHandle.addEventListener('touchstart', (e) => handleDrag(e, maxHandle))
 
     updateRange()
 
 }
-
+// поле на номер відділення
 if (document.querySelector(".radio")) {
     const radio = document.querySelectorAll(".delivery-method .radio"),
-        numbPost = document.querySelector(".numbPost")
+        numbPost = document.querySelector(".numbPost"),
+        numbPostText = numbPost.querySelector("span")
+
+    function updateNumbPost(selectedId) {
+        switch (selectedId) {
+            case 'newPoszht':
+                numbPostText.textContent = "Номер відділення"
+                numbPost.style.display = "block"
+                break;
+            case 'newPoszhtPozhtomat':
+                numbPostText.textContent = "Номер поштомату"
+                numbPost.style.display = "block"
+                break;
+            case 'UkrPoshzta':
+                numbPostText.textContent = "Номер відділення"
+                numbPost.style.display = "block"
+                break;
+            case 'selfPickup':
+                numbPost.style.display = "none"
+                break;
+            default:
+                numbPost.style.display = "none"
+        }
+    }
     radio.forEach(radio => {
         radio.addEventListener('change', function () {
-            numbPost.style.display = "block"
+            updateNumbPost(this.id)
         })
     })
 }
