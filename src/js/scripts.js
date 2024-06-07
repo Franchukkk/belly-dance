@@ -370,3 +370,23 @@ if (document.querySelector(".radio")) {
         })
     })
 }
+
+//попап на фото в картці
+
+if(document.querySelector(".main-img")) {
+    const mainImg = document.querySelector(".main-card-img"),
+        cancelPopup = document.querySelector(".cancel-popup"),
+        imgPopup = document.querySelector(".popup-img-block img"),
+        popupImgBlock = document.querySelector(".popup-img")
+    
+    mainImg.addEventListener("click", function() {
+        popupImgBlock.style.display = 'block'
+        let srcImg = this.src,
+            altImg = this.alt
+        imgPopup.src = srcImg
+        imgPopup.alt = altImg
+    })
+    cancelPopup.addEventListener("click", function() {
+        popupImgBlock.style.display = "none"
+    })
+}

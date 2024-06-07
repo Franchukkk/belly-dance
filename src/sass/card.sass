@@ -244,3 +244,42 @@
         font-weight: 400
         letter-spacing: 6.4px
         text-transform: uppercase
+
+.popup-img
+    display: none
+    position: fixed
+    top: 0
+    left: 0
+    background-color: #27172f
+    width: 100vw   
+    min-height: 100vh
+    z-index: 20
+
+.popup-img-block
+    position: fixed
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    background-color: #fff
+    min-width: 90vw
+    min-height: 90vh
+    z-index: 25
+    +media(768)
+        min-width: 55vw
+    img
+        width: 100%
+        max-width: 55vw
+        max-height: 90vh
+        object-fit: contain
+        object-position: center
+
+.cancel-popup
+    display: block
+    width: 30px
+    height: 30px
+    position: absolute
+    top: 20px 
+    right: 20px
+    z-index: 27
+    svg
+        fill: #C482E6
