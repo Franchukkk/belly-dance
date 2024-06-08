@@ -166,19 +166,20 @@
             right: 32px
             transform: translateY(-80%) rotate(225deg)
             +media(426)
-                right: 50rem
+                right: 30rem
     .select__item, .select__in
         position: relative
-        margin-left: 20rem
-        &::before
-            content: ""
-            position: absolute
-            top: 50%
-            left: 0
+        // margin-left: 10rem
+        span
+            // content: ""
+            // position: absolute
+            // top: 50%
+            // left: 0
+            display: inline-block
             width: 10px
             height: 10px
-            background-color: #000
-            transform: translateY(-50%)
+            margin-right: 10px
+            // transform: translateY(-50%)
     .select__item
         &::before
             left: -10rem

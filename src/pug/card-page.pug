@@ -123,12 +123,22 @@ html(lang="uk")
                                 label.arrow-select
                                     .select
                                         input(type='hidden').select__input
-                                        .select__in 01 чорний
+                                        .select__in 
+                                            span(style="background-color: #f00")
+                                            | 01 чорний
                                         .select__list
-                                            .select__item(data-value='2') 01 чорний
-                                            .select__item(data-value='3') 01 чорний
-                                            .select__item(data-value='4') 01 чорний
-                                            .select__item(data-value='5') 01 чорний
+                                            .select__item(data-value='2') 
+                                                span(style="background-color: #000")
+                                                | 01 чорний
+                                            .select__item(data-value='3') 
+                                                span(style="background-color: #0f0")
+                                                | 01 чорний
+                                            .select__item(data-value='4') 
+                                                span(style="background-color: #00f")
+                                                | 01 чорний
+                                            .select__item(data-value='5') 
+                                                span(style="background-color: #ff0")
+                                                | 01 чорний
                             .count.items-center 
                                 span Кількість:
                                 p.d-flex
