@@ -33,7 +33,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         scrollLinks.forEach((el) => {
             el.addEventListener("click", function(e) {
-                burgerToggle()
+                if (window.innerWidth < 800) {
+                    burgerToggle()
+
+                }
 
             })
         })

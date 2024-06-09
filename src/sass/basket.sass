@@ -126,6 +126,8 @@ p.page-look
     top: 25rem
     right: 20rem
     cursor: pointer
+    background-color: transparent
+    border: none
         
 
 
@@ -205,6 +207,7 @@ input.checkbox
     font-weight: 400
     padding-left: 25rem
     margin-bottom: 12rem
+    cursor: pointer
     &::before
         content: ''
         position: absolute
@@ -246,7 +249,7 @@ input.checkbox
     padding-top: 27rem
     +media(500)
         flex-wrap: nowrap
-    button
+    button, a
         display: flex
         width: 100%
         font-size: 11px
@@ -254,6 +257,7 @@ input.checkbox
         text-transform: uppercase
         align-items: center
         justify-content: center
+        cursor: pointer
         &:first-child
             border: none
         +media(500)
@@ -262,7 +266,9 @@ input.checkbox
             font-size: 12px
         +media(1655)
             font-size: 18px
-    button[type="button"]
+    a
+        color: #000
+        text-decoration: none
         background-color: #fff
 
 .basket-margin

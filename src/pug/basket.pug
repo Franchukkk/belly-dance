@@ -23,8 +23,8 @@ html(lang="uk")
                 p.page-look 
                     a(href="index.html") головна
                     span.arrow
-                    span.selected-page корзина
-                h1.basket-title корзина
+                    span.selected-page кошик
+                h1.basket-title кошик
                 .flex-between.basket-margin
                     .products-to-buy 
                         include components/basket-product
@@ -58,7 +58,7 @@ html(lang="uk")
                             .flex-between 
                                 label(for="phone").w48
                                     b Телефон
-                                    input(type="text" id="phone")
+                                    input(type="tel" id="phone")
                                 label(for="city").w48
                                     b Місто
                                     input(type="text" id="city")
@@ -91,7 +91,7 @@ html(lang="uk")
                                     label(for="subscription") Часткова передплата (150₴)
                             .flex-between.check-out-btns
                                 button(type="submit").cta-catalog  ПІДТВЕРДИТИ
-                                button(type="button").cta-card продовжити покупки
+                                a(href="catalog.html").cta-card продовжити покупки
         footer 
             include components/footer
 

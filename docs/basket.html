@@ -70,12 +70,12 @@
     </header>
     <main>
       <div class="wrapper">
-        <p class="page-look"> <a href="index.html">головна</a><span class="arrow"></span><span class="selected-page">корзина</span></p>
-        <h1 class="basket-title">корзина</h1>
+        <p class="page-look"> <a href="index.html">головна</a><span class="arrow"></span><span class="selected-page">кошик</span></p>
+        <h1 class="basket-title">кошик</h1>
         <div class="flex-between basket-margin">
           <div class="products-to-buy"> 
-            <div class="product-to-buy--card flex-between items-center relative">
-              <div class="delete-product"></div>
+            <form class="product-to-buy--card flex-between items-center relative" method="post" action="">
+              <button class="delete-product" type="submit"></button>
               <div class="prod-img-description d-flex">
                 <div class="prod-image">
                   <picture><img src="img/product-image.jpg" alt="" loading="lazy"></picture>
@@ -99,9 +99,9 @@
                 </div>
               </div>
               <div class="prod-price items-center"> <b>680₴</b><span>980₴</span></div>
-            </div>
-            <div class="product-to-buy--card flex-between items-center relative">
-              <div class="delete-product"></div>
+            </form>
+            <form class="product-to-buy--card flex-between items-center relative" method="post" action="">
+              <button class="delete-product" type="submit"></button>
               <div class="prod-img-description d-flex">
                 <div class="prod-image">
                   <picture><img src="img/product-image.jpg" alt="" loading="lazy"></picture>
@@ -125,9 +125,9 @@
                 </div>
               </div>
               <div class="prod-price items-center"> <b>680₴</b><span>980₴</span></div>
-            </div>
-            <div class="product-to-buy--card flex-between items-center relative">
-              <div class="delete-product"></div>
+            </form>
+            <form class="product-to-buy--card flex-between items-center relative" method="post" action="">
+              <button class="delete-product" type="submit"></button>
               <div class="prod-img-description d-flex">
                 <div class="prod-image">
                   <picture><img src="img/product-image.jpg" alt="" loading="lazy"></picture>
@@ -151,9 +151,9 @@
                 </div>
               </div>
               <div class="prod-price items-center"> <b>680₴</b><span>980₴</span></div>
-            </div>
-            <div class="product-to-buy--card flex-between items-center relative">
-              <div class="delete-product"></div>
+            </form>
+            <form class="product-to-buy--card flex-between items-center relative" method="post" action="">
+              <button class="delete-product" type="submit"></button>
               <div class="prod-img-description d-flex">
                 <div class="prod-image">
                   <picture><img src="img/product-image.jpg" alt="" loading="lazy"></picture>
@@ -177,7 +177,7 @@
                 </div>
               </div>
               <div class="prod-price items-center"> <b>680₴</b><span>980₴</span></div>
-            </div>
+            </form>
           </div>
           <div class="check-out">
             <h3>оформлення замовлення</h3>
@@ -207,7 +207,7 @@
               </div>
               <div class="flex-between"> 
                 <label class="w48" for="phone"><b>Телефон</b>
-                  <input type="text" id="phone">
+                  <input type="tel" id="phone">
                 </label>
                 <label class="w48" for="city"><b>Місто</b>
                   <input type="text" id="city">
@@ -244,8 +244,7 @@
                 </div>
               </div>
               <div class="flex-between check-out-btns">
-                <button class="cta-catalog" type="submit"> ПІДТВЕРДИТИ</button>
-                <button class="cta-card" type="button">продовжити покупки</button>
+                <button class="cta-catalog" type="submit"> ПІДТВЕРДИТИ</button><a class="cta-card" href="catalog.html">продовжити покупки</a>
               </div>
             </form>
           </div>
