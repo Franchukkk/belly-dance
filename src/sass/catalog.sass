@@ -229,7 +229,10 @@
         opacity: 1
         z-index: 5
     .select__item
+        transition: all .5s ease
         display: block
+        &:hover
+            color: #C482E6
 
 .is-active
     display: none
@@ -283,8 +286,7 @@
     background: #FFF
     transition: all .3s ease
     cursor: pointer
-    &:hover
-        font-weight: 500
+
 
 .pagination
     justify-content: center
