@@ -229,7 +229,10 @@
         opacity: 1
         z-index: 5
     .select__item
+        transition: all .5s ease
         display: block
+        &:hover
+            color: #C482E6
 
 .is-active
     display: none
@@ -348,3 +351,4 @@ span.input-text
     font-size: 14rem
     font-weight: 400
     text-transform: none
+    cursor: pointer
