@@ -165,127 +165,123 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-})
+    const btnReadMore = document.querySelectorAll(".readmore")
 
-const btnReadMore = document.querySelectorAll(".readmore")
-
-btnReadMore.forEach((item) => {
-    item.addEventListener("click", function (e) {
-        e.preventDefault()
-        const descriptionMore = item.nextElementSibling
-        descriptionMore.classList.toggle("visible")
-        item.classList.toggle("readmore-active")
-    })
-})
-
-
-// select 
-const selects = document.querySelectorAll('.select')
-
-selects.forEach(select => {
-    const selectIn = select.querySelector('.select__in'),
-        selectItems = select.querySelectorAll('.select__item'),
-        thisInput = select.querySelector('.select__input'),
-        event = new Event('change')
-
-    selectIn.addEventListener('click', () => {
-        selects.forEach(_select => {
-            if (_select !== select)
-                _select.classList.remove('is-opened')
-        })
-        select.classList.toggle('is-opened')
-    })
-    if (selectItems.length > 0) {
-        const firstItem = selectItems[0]
-        thisInput.value = firstItem.dataset.value
-        selectIn.innerHTML = firstItem.innerHTML
-        firstItem.classList.add('is-active')
-    }
-    selectItems.forEach(item => {
-        item.addEventListener('click', () => {
-            thisInput.value = item.dataset.value
-            thisInput.dispatchEvent(event)
-            selectIn.innerHTML = item.innerHTML
-            selectItems.forEach(_item => {
-                _item.classList.remove('is-active')
-            });
-            item.classList.add('is-active')
-            select.classList.remove('is-opened')
+    btnReadMore.forEach((item) => {
+        item.addEventListener("click", function (e) {
+            e.preventDefault()
+            const descriptionMore = item.nextElementSibling
+            descriptionMore.classList.toggle("visible")
+            item.classList.toggle("readmore-active")
         })
     })
-})
+    // select 
+    const selects = document.querySelectorAll('.select')
 
-document.addEventListener('click', e => {
-    if (!e.target.closest('.select')) {
-        selects.forEach(select => {
-            if (select.classList.contains('is-opened'))
+    selects.forEach(select => {
+        const selectIn = select.querySelector('.select__in'),
+            selectItems = select.querySelectorAll('.select__item'),
+            thisInput = select.querySelector('.select__input'),
+            event = new Event('change')
+
+        selectIn.addEventListener('click', () => {
+            selects.forEach(_select => {
+                if (_select !== select)
+                    _select.classList.remove('is-opened')
+            })
+            select.classList.toggle('is-opened')
+        })
+        if (selectItems.length > 0) {
+            const firstItem = selectItems[0]
+            thisInput.value = firstItem.dataset.value
+            selectIn.innerHTML = firstItem.innerHTML
+            firstItem.classList.add('is-active')
+        }
+        selectItems.forEach(item => {
+            item.addEventListener('click', () => {
+                thisInput.value = item.dataset.value
+                thisInput.dispatchEvent(event)
+                selectIn.innerHTML = item.innerHTML
+                selectItems.forEach(_item => {
+                    _item.classList.remove('is-active')
+                });
+                item.classList.add('is-active')
                 select.classList.remove('is-opened')
+            })
         })
-    }
-})
+    })
 
-document.addEventListener('keyup', e => {
-    if (e.key == 'Escape') {
-        selects.forEach(select => {
-            if (select.classList.contains('is-opened'))
-                select.classList.remove('is-opened')
-        })
-    }
-})
-
-function slider() {
-    const sliderContainer = document.querySelector('.carousel-card'),
-        sliderImages = [...document.querySelectorAll('.carousel-item')],
-        btnSlider = document.querySelectorAll(".btn")
-
-    let imageHeight = sliderImages[0].offsetHeight
-
-    let currentSlide = 0
-    btnSlider.forEach(itemBtn => {
-        if (sliderImages.length > 3) {
-            itemBtn.style.display = "block"
-        } else {
-            itemBtn.style.display = "none"
+    document.addEventListener('click', e => {
+        if (!e.target.closest('.select')) {
+            selects.forEach(select => {
+                if (select.classList.contains('is-opened'))
+                    select.classList.remove('is-opened')
+            })
         }
     })
 
-    function nextSlide(e) {
-        e.preventDefault()
-        if (currentSlide > 0) {
-            currentSlide--
-            sliderContainer.style.transition = 'transform 0.3s ease-in-out'
-            sliderContainer.style.transform = `translateY(-${currentSlide * imageHeight}px)`
+    document.addEventListener('keyup', e => {
+        if (e.key == 'Escape') {
+            selects.forEach(select => {
+                if (select.classList.contains('is-opened'))
+                    select.classList.remove('is-opened')
+            })
         }
-    }
+    })
 
-    function prevSlide(e) {
-        e.preventDefault()
-        if (currentSlide < sliderImages.length - 3) {
-            currentSlide++
-            sliderContainer.style.transition = 'transform 0.3s ease-in-out'
-            sliderContainer.style.transform = `translateY(-${currentSlide * imageHeight}px)`
+    function slider() {
+        const sliderContainer = document.querySelector('.carousel-card'),
+            sliderImages = [...document.querySelectorAll('.carousel-item')],
+            btnSlider = document.querySelectorAll(".btn")
+
+        let imageHeight = sliderImages[0].offsetHeight
+
+        let currentSlide = 0
+        btnSlider.forEach(itemBtn => {
+            if (sliderImages.length > 3) {
+                itemBtn.style.display = "block"
+            } else {
+                itemBtn.style.display = "none"
+            }
+        })
+
+        function nextSlide(e) {
+            e.preventDefault()
+            if (currentSlide > 0) {
+                currentSlide--
+                sliderContainer.style.transition = 'transform 0.3s ease-in-out'
+                sliderContainer.style.transform = `translateY(-${currentSlide * imageHeight}px)`
+            }
         }
-    }
 
-    const nextButton = document.querySelector('.btn-next')
-    if (nextButton) {
-        nextButton.addEventListener('click', nextSlide)
-    }
+        function prevSlide(e) {
+            e.preventDefault()
+            if (currentSlide < sliderImages.length - 3) {
+                currentSlide++
+                sliderContainer.style.transition = 'transform 0.3s ease-in-out'
+                sliderContainer.style.transform = `translateY(-${currentSlide * imageHeight}px)`
+            }
+        }
 
-    const prevButton = document.querySelector('.btn-prev')
-    if (prevButton) {
-        prevButton.addEventListener('click', prevSlide)
-    }
+        const nextButton = document.querySelector('.btn-next')
+        if (nextButton) {
+            nextButton.addEventListener('click', nextSlide)
+        }
 
-}
-if (document.querySelector(".img-block")) {
-    slider()
-    window.addEventListener('resize', () => {
+        const prevButton = document.querySelector('.btn-prev')
+        if (prevButton) {
+            prevButton.addEventListener('click', prevSlide)
+        }
+
+    }
+    if (document.querySelector(".img-block")) {
         slider()
-    })
-}
-//кастомний рендж для ціни
-document.addEventListener("DOMContentLoaded", function() {
+        window.addEventListener('resize', () => {
+            slider()
+        })
+    }
+
+    //кастомний рендж для ціни
     if (document.querySelector('.slider-range')) {
         const slider = document.querySelector('.slider-range'),
             minHandle = document.querySelector('#min-handle'),
@@ -359,100 +355,100 @@ document.addEventListener("DOMContentLoaded", function() {
     
     }
 
-})
-// поле на номер відділення
-if (document.querySelector(".radio")) {
-    const radio = document.querySelectorAll(".delivery-method .radio"),
-        numbPost = document.querySelector(".numbPost"),
-        numbPostText = numbPost.querySelector("span")
+    // поле на номер відділення
+    if (document.querySelector(".radio")) {
+        const radio = document.querySelectorAll(".delivery-method .radio"),
+            numbPost = document.querySelector(".numbPost"),
+            numbPostText = numbPost.querySelector("span")
 
-    function updateNumbPost(selectedId) {
-        switch (selectedId) {
-            case 'newPoszht':
-                numbPostText.textContent = "Номер відділення"
-                numbPost.style.display = "block"
-                break;
-            case 'newPoszhtPozhtomat':
-                numbPostText.textContent = "Номер поштомату"
-                numbPost.style.display = "block"
-                break;
-            case 'UkrPoshzta':
-                numbPostText.textContent = "Номер відділення"
-                numbPost.style.display = "block"
-                break;
-            case 'selfPickup':
-                numbPost.style.display = "none"
-                break;
-            default:
-                numbPost.style.display = "none"
+        function updateNumbPost(selectedId) {
+            switch (selectedId) {
+                case 'newPoszht':
+                    numbPostText.textContent = "Номер відділення"
+                    numbPost.style.display = "block"
+                    break;
+                case 'newPoszhtPozhtomat':
+                    numbPostText.textContent = "Номер поштомату"
+                    numbPost.style.display = "block"
+                    break;
+                case 'UkrPoshzta':
+                    numbPostText.textContent = "Номер відділення"
+                    numbPost.style.display = "block"
+                    break;
+                case 'selfPickup':
+                    numbPost.style.display = "none"
+                    break;
+                default:
+                    numbPost.style.display = "none"
+            }
         }
-    }
-    radio.forEach(radio => {
-        radio.addEventListener('change', function () {
-            updateNumbPost(this.id)
+        radio.forEach(radio => {
+            radio.addEventListener('change', function () {
+                updateNumbPost(this.id)
+            })
         })
-    })
-}
+    }
 
-//попап на фото в картці
+    //попап на фото в картці
 
-if (document.querySelector(".main-img")) {
-    const mainImg = document.querySelector(".main-card-img"),
-        cancelPopup = document.querySelector(".cancel-popup"),
-        imgPopup = document.querySelector(".popup-img-block img"),
-        popupImgBlock = document.querySelector(".popup-img")
+    if (document.querySelector(".main-img")) {
+        const mainImg = document.querySelector(".main-card-img"),
+            cancelPopup = document.querySelector(".cancel-popup"),
+            imgPopup = document.querySelector(".popup-img-block img"),
+            popupImgBlock = document.querySelector(".popup-img")
 
-    mainImg.addEventListener("click", function () {
-        popupImgBlock.style.display = 'block'
-        let srcImg = this.src,
-            altImg = this.alt
-        imgPopup.src = srcImg
-        imgPopup.alt = altImg
-    })
-    cancelPopup.addEventListener("click", function () {
-        popupImgBlock.style.display = "none"
-    })
-}
-// if(document.querySelector('.number')) {
-//     const input = document.querySelector('.number'),
-//         minButton = document.querySelector('.min'),
-//         maxButton = document.querySelector('.max')
+        mainImg.addEventListener("click", function () {
+            popupImgBlock.style.display = 'block'
+            let srcImg = this.src,
+                altImg = this.alt
+            imgPopup.src = srcImg
+            imgPopup.alt = altImg
+        })
+        cancelPopup.addEventListener("click", function () {
+            popupImgBlock.style.display = "none"
+        })
+    }
+    // if(document.querySelector('.number')) {
+    //     const input = document.querySelector('.number'),
+    //         minButton = document.querySelector('.min'),
+    //         maxButton = document.querySelector('.max')
 
-//     minButton.addEventListener('click', function(e) {
-//         e.preventDefault()
-//         let currentValue = parseInt(input.value)
-//         if (currentValue > parseInt(input.min)) {
-//             input.value = currentValue - 1
-//         }
-//     })
-//     maxButton.addEventListener('click', function(e) {
-//         e.preventDefault()
-//         let currentValue = parseInt(input.value)
-//         input.value = currentValue + 1
-//     })
-// }
-
+    //     minButton.addEventListener('click', function(e) {
+    //         e.preventDefault()
+    //         let currentValue = parseInt(input.value)
+    //         if (currentValue > parseInt(input.min)) {
+    //             input.value = currentValue - 1
+    //         }
+    //     })
+    //     maxButton.addEventListener('click', function(e) {
+    //         e.preventDefault()
+    //         let currentValue = parseInt(input.value)
+    //         input.value = currentValue + 1
+    //     })
+    // }
 
 
-document.querySelectorAll('.number').forEach(input => {
 
-    const container = input.closest('.d-flex'),
-        minButton = container.querySelector('.min'),
-        maxButton = container.querySelector('.max')
+    document.querySelectorAll('.number').forEach(input => {
 
-
-    minButton.addEventListener('click', function (e) {
-        e.preventDefault();
-        let currentValue = parseInt(input.value)
-        if (currentValue > parseInt(input.min)) {
-            input.value = currentValue - 1
-        }
-    })
+        const container = input.closest('.d-flex'),
+            minButton = container.querySelector('.min'),
+            maxButton = container.querySelector('.max')
 
 
-    maxButton.addEventListener('click', function (e) {
-        e.preventDefault()
-        let currentValue = parseInt(input.value)
-        input.value = currentValue + 1
+        minButton.addEventListener('click', function (e) {
+            e.preventDefault();
+            let currentValue = parseInt(input.value)
+            if (currentValue > parseInt(input.min)) {
+                input.value = currentValue - 1
+            }
+        })
+
+
+        maxButton.addEventListener('click', function (e) {
+            e.preventDefault()
+            let currentValue = parseInt(input.value)
+            input.value = currentValue + 1
+        })
     })
 })
