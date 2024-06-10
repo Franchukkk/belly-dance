@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let burger = document.querySelector(".burger"),
             burgerMenu = document.querySelector(".top-navigation")
         burgerBtn = document.querySelector(".burger-wrap")
-        
+
         function burgerToggle() {
             burger.classList.toggle("active")
             burgerMenu.classList.toggle("active")
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let scrollLinks = document.querySelectorAll(".scroll-link")
 
         scrollLinks.forEach((el) => {
-            el.addEventListener("click", function(e) {
+            el.addEventListener("click", function (e) {
                 if (window.innerWidth < 800) {
                     burgerToggle()
 
@@ -300,6 +300,7 @@ if (document.querySelector('.slider-range')) {
     let minPrice = minValueSpan.getAttribute("data-value"),
         maxPrice = maxValueSpan.getAttribute("data-value")
     console.log(minPrice, maxPrice);
+
     function updateRange() {
         const minPos = minHandle.offsetLeft,
             maxPos = maxHandle.offsetLeft
@@ -392,38 +393,63 @@ if (document.querySelector(".radio")) {
 
 //попап на фото в картці
 
-if(document.querySelector(".main-img")) {
+if (document.querySelector(".main-img")) {
     const mainImg = document.querySelector(".main-card-img"),
         cancelPopup = document.querySelector(".cancel-popup"),
         imgPopup = document.querySelector(".popup-img-block img"),
         popupImgBlock = document.querySelector(".popup-img")
-    
-    mainImg.addEventListener("click", function() {
+
+    mainImg.addEventListener("click", function () {
         popupImgBlock.style.display = 'block'
         let srcImg = this.src,
             altImg = this.alt
         imgPopup.src = srcImg
         imgPopup.alt = altImg
     })
-    cancelPopup.addEventListener("click", function() {
+    cancelPopup.addEventListener("click", function () {
         popupImgBlock.style.display = "none"
     })
 }
-if(document.querySelector('.number')) {
-    const input = document.querySelector('.number'),
-        minButton = document.querySelector('.min'),
-        maxButton = document.querySelector('.max')
+// if(document.querySelector('.number')) {
+//     const input = document.querySelector('.number'),
+//         minButton = document.querySelector('.min'),
+//         maxButton = document.querySelector('.max')
 
-    minButton.addEventListener('click', function(e) {
-        e.preventDefault()
+//     minButton.addEventListener('click', function(e) {
+//         e.preventDefault()
+//         let currentValue = parseInt(input.value)
+//         if (currentValue > parseInt(input.min)) {
+//             input.value = currentValue - 1
+//         }
+//     })
+//     maxButton.addEventListener('click', function(e) {
+//         e.preventDefault()
+//         let currentValue = parseInt(input.value)
+//         input.value = currentValue + 1
+//     })
+// }
+
+
+
+document.querySelectorAll('.number').forEach(input => {
+
+    const container = input.closest('.d-flex'),
+        minButton = container.querySelector('.min'),
+        maxButton = container.querySelector('.max')
+
+
+    minButton.addEventListener('click', function (e) {
+        e.preventDefault();
         let currentValue = parseInt(input.value)
         if (currentValue > parseInt(input.min)) {
             input.value = currentValue - 1
         }
     })
-    maxButton.addEventListener('click', function(e) {
+
+
+    maxButton.addEventListener('click', function (e) {
         e.preventDefault()
         let currentValue = parseInt(input.value)
         input.value = currentValue + 1
     })
-}
+})
