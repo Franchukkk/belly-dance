@@ -8,8 +8,8 @@
             .slider-range
                 .range#range
                 .values
-                    span#min-value 0
-                    span#max-value 1000
+                    span#min-value(data-value="0")
+                    span#max-value(data-value="1000") 
                 .handle#min-handle
                 .handle#max-handle
             form(method="post" action="index.php")
@@ -57,6 +57,7 @@
                         label(for="id3-2") сумки
         .color 
             p.header-filter Колір
-            p
-                input.checkbox(type="checkbox" id="color1")
-                label(for="color1") білий
+            p.items-center
+                label(for="color1")
+                    input.checkbox(type="checkbox" id="color1")
+                span.input-text білий

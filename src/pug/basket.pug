@@ -23,8 +23,8 @@ html(lang="uk")
                 p.page-look 
                     a(href="index.html") головна
                     span.arrow
-                    span.selected-page корзина
-                h1.basket-title корзина
+                    span.selected-page кошик
+                h1.basket-title кошик
                 .flex-between.basket-margin
                     .products-to-buy 
                         include components/basket-product
@@ -58,7 +58,7 @@ html(lang="uk")
                             .flex-between 
                                 label(for="phone").w48
                                     b Телефон
-                                    input(type="text" id="phone")
+                                    input(type="tel" id="phone")
                                 label(for="city").w48
                                     b Місто
                                     input(type="text" id="city")
@@ -68,30 +68,46 @@ html(lang="uk")
                             .delivery-payment-methods.flex-between
                                 .delivery-method
                                     p Спосіб доставки:
-                                    input(class="checkbox radio" type="radio", name="deliveryMethod", id="newPoszht")
-                                    label(for="newPoszht") Нова пошта у відділення
-                                    input(class="checkbox radio" type="radio", name="deliveryMethod", id="newPoszhtPozhtomat")
-                                    label(for="newPoszhtPozhtomat") Нова пошта у поштомат
-                                    input(class="checkbox radio" type="radio", name="deliveryMethod", id="UkrPoshzta")
-                                    label(for="UkrPoshzta") Укрпошта
-                                    input(class="checkbox radio" type="radio", name="deliveryMethod", id="selfPickup")
-                                    label(for="selfPickup") Самовивіз
+                                    p.items-center
+                                        label(for="newPoszht") 
+                                            input(class="checkbox radio" type="radio", name="deliveryMethod", id="newPoszht")
+                                        span.input-text Нова пошта у відділення
+                                    p.items-center
+                                        label(for="newPoszhtPozhtomat")
+                                            input(class="checkbox radio" type="radio", name="deliveryMethod", id="newPoszhtPozhtomat")
+                                        span.input-text Нова пошта у поштомат
+                                    p.items-center
+                                        label(for="UkrPoshzta")
+                                            input(class="checkbox radio" type="radio", name="deliveryMethod", id="UkrPoshzta")
+                                        span.input-text Укрпошта
+                                    p.items-center
+                                        label(for="selfPickup") 
+                                            input(class="checkbox radio" type="radio", name="deliveryMethod", id="selfPickup")
+                                        span.input-text Самовивіз
                                     label.numbPost 
                                         span 
                                         input(type="number" min="1")
                                 .payment-method
                                     p Спосіб оплати:
-                                    input(class="checkbox radio" type="radio", name="paymentMethod", id="visaMastercard")
-                                    label(for="visaMastercard") Карта Visa/MasterCard 
-                                    input(class="checkbox radio" type="radio", name="paymentMethod", id="byCard")
-                                    label(for="byCard") На карту 
-                                    input(class="checkbox radio" type="radio", name="paymentMethod", id="paymentOnAccount")
-                                    label(for="paymentOnAccount") На рахунок 
-                                    input(class="checkbox radio" type="radio", name="paymentMethod", id="subscription")
-                                    label(for="subscription") Часткова передплата (150₴)
+                                    p.items-center    
+                                        label(for="visaMastercard") 
+                                            input(class="checkbox radio" type="radio", name="paymentMethod", id="visaMastercard")
+                                        span.input-text Карта Visa/MasterCard 
+                                    p.items-center    
+                                        label(for="byCard")
+                                            input(class="checkbox radio" type="radio", name="paymentMethod", id="byCard")
+                                        span.input-text На карту 
+                                    p.items-center    
+                                        label(for="paymentOnAccount") 
+                                            input(class="checkbox radio" type="radio", name="paymentMethod", id="paymentOnAccount")
+                                        span.input-text На рахунок 
+                                    p.items-center    
+                                        label(for="subscription") 
+                                            input(class="checkbox radio" type="radio", name="paymentMethod", id="subscription")
+                                        span.input-text Часткова передплата (150₴)
                             .flex-between.check-out-btns
                                 button(type="submit").cta-catalog  ПІДТВЕРДИТИ
-                                button(type="button").cta-card продовжити покупки
+                                a(href="catalog.html").cta-card продовжити покупки
         footer 
             include components/footer
 

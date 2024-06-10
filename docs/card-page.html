@@ -49,9 +49,9 @@
           <nav class="top-navigation">
             <ul class="flex-between flex-wrap">
               <li><a href="index.html">головна</a></li>
-              <li><a href="index.html#aboutUs">про нас</a></li>
+              <li class="scroll-link"><a href="index.html#aboutUs">про нас</a></li>
               <li><a href="catalog.html">каталог</a></li>
-              <li><a href="index.html#contacts">контакти</a></li>
+              <li class="scroll-link"><a href="index.html#contacts">контакти</a></li>
             </ul>
           </nav>
           <div class="logo"> <a href="index.html"> 
@@ -72,7 +72,12 @@
       </div>
     </header>
     <main> 
-      <div class="popup-img"> </div>
+      <div class="popup-img"> 
+        <picture class="popup-img-block"><img src="" alt=""><a class="cancel-popup" href="#">
+            <svg width="15.026367" height="15.036133" viewBox="0 0 15.0264 15.0361" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <path id="видалити" d="M0.424805 0.29834C0.819336 -0.0993652 1.43848 -0.0993652 1.83301 0.29834L7.51367 6.03198L13.1943 0.29834C13.5879 -0.0993652 14.208 -0.0993652 14.6016 0.29834C14.9961 0.696289 14.9961 1.32129 14.6016 1.71924L8.9209 7.45288L14.7314 13.3171C15.125 13.7148 15.125 14.3401 14.7314 14.7378C14.3369 15.1355 13.7178 15.1355 13.3232 14.7378L7.51367 8.87354L1.70312 14.7378C1.30957 15.1355 0.689453 15.1355 0.295898 14.7378C-0.0986328 14.3401 -0.0986328 13.7148 0.295898 13.3171L6.10547 7.45288L0.424805 1.71924C0.03125 1.32129 0.03125 0.696289 0.424805 0.29834Z" clip-rule="evenodd" fill-opacity="1.000000" fill-rule="evenodd"></path>
+            </svg></a></picture>
+      </div>
       <div class="wrapper">
         <div class="card-main"> 
           <div class="img-block"> 
@@ -140,13 +145,13 @@
             <div class="form-card items-center">
               <div class="size items-center"> <span>Розмір:</span>
                 <p>
-                  <input type="checkbox" id="size1" name="xs">
+                  <input type="radio" id="size1" name="size">
                   <label for="size1"> <span>XS</span></label>
-                  <input type="checkbox" id="size2" name="s">
+                  <input type="radio" id="size2" name="size">
                   <label for="size2"> <span>S</span></label>
-                  <input type="checkbox" id="size3" name="m">
+                  <input type="radio" id="size3" name="size">
                   <label for="size3"> <span>M</span></label>
-                  <input type="checkbox" id="size4" name="l">
+                  <input type="radio" id="size4" name="size">
                   <label for="size4"> <span>L</span></label>
                 </p>
               </div>
@@ -154,25 +159,27 @@
                 <label class="arrow-select">
                   <div class="select">
                     <input class="select__input" type="hidden">
-                    <div class="select__in">01 чорний</div>
+                    <div class="select__in"> </div>
                     <div class="select__list">
-                      <div class="select__item" data-value="2">01 чорний</div>
-                      <div class="select__item" data-value="3">01 чорний</div>
-                      <div class="select__item" data-value="4">01 чорний</div>
-                      <div class="select__item" data-value="5">01 чорний</div>
+                      <div class="select__item" data-value="3"> <span style="background-color: #0f0"></span>01 зелений</div>
+                      <div class="select__item" data-value="2"> <span style="background-color: #f00"></span>01 червоний</div>
+                      <div class="select__item" data-value="4"> <span style="background-color: #00f"></span>01 синій</div>
+                      <div class="select__item" data-value="5"> <span style="background-color: #ff0"></span>01 жовтий</div>
                     </div>
                   </div>
                 </label>
               </div>
               <div class="count items-center"> <span>Кількість:</span>
-                <p class="d-flex"><a class="min" href="#"> <span>-</span></a><a class="number" href="#"> <span>1</span></a><a class="max" href="#"> <span>+</span></a></p>
+                <p class="d-flex"><a class="min" href="#"> <span>-</span></a>
+                  <input class="number" type="number" min="1" value="1"><a class="max" href="#"> <span>+</span></a>
+                </p>
               </div>
             </div>
-            <div class="cta-catalog-clock"> <a class="cta-catalog text-style-card" href="#">в корзину</a></div>
+            <div class="cta-catalog-clock"> <a class="cta-catalog text-style-card" href="#">в кошик</a></div>
           </div>
         </div>
         <div class="table">
-          <p>Розмірна сітка</p>
+          <p>Розмірна сітка: Футболка, футболка довгий рукав.</p>
           <table class="t-shirt-long w50">
             <thead> 
               <tr> 
@@ -235,6 +242,9 @@
               </tr>
             </tbody>
           </table>
+        </div>
+        <div class="table">
+          <p>Розмірна сітка: Комбінезон без рукава.</p>
           <table class="combinezon-bez-rukava w25">
             <thead> 
               <tr> 
@@ -289,6 +299,9 @@
               </tr>
             </tbody>
           </table>
+        </div>
+        <div class="table">
+          <p>Розмірна сітка: Комбінезон з рукавом.</p>
           <table class="combinezon-z-rukav w25">
             <thead> 
               <tr> 
@@ -349,6 +362,9 @@
               </tr>
             </tbody>
           </table>
+        </div>
+        <div class="table">
+          <p>Розмірна сітка: Топ.</p>
           <table class="top w50">
             <thead> 
               <tr> 
@@ -395,6 +411,9 @@
               </tr>
             </tbody>
           </table>
+        </div>
+        <div class="table">
+          <p>Розмірна сітка: Шорти.</p>
           <table class="shorty w50">
             <thead> 
               <tr> 
@@ -429,6 +448,9 @@
               </tr>
             </tbody>
           </table>
+        </div>
+        <div class="table">
+          <p>Розмірна сітка: Шорти гімнастичні чорні, стрейч-кулір.</p>
           <table class="shorty gimnastychni w50">
             <thead> 
               <tr> 
@@ -467,6 +489,9 @@
               </tr>
             </tbody>
           </table>
+        </div>
+        <div class="table">
+          <p>Розмірна сітка: Велосипедки.</p>
           <table class="velosypedki w25">
             <thead> 
               <tr> 
@@ -527,6 +552,9 @@
               </tr>
             </tbody>
           </table>
+        </div>
+        <div class="table">
+          <p>Розмірна сітка: Бриджі.</p>
           <table class="brudzi w25">
             <thead> 
               <tr> 
@@ -587,6 +615,9 @@
               </tr>
             </tbody>
           </table>
+        </div>
+        <div class="table">
+          <p>Розмірна сітка: Лосини звичайні.</p>
           <table class="losiny-zvych w33">
             <thead> 
               <tr> 
@@ -633,6 +664,9 @@
               </tr>
             </tbody>
           </table>
+        </div>
+        <div class="table">
+          <p>Розмірна сітка: Лосини з високою посадкою.</p>
           <table class="losiny-vysoki w33">
             <thead> 
               <tr> 
@@ -659,6 +693,9 @@
               </tr>
             </tbody>
           </table>
+        </div>
+        <div class="table">
+          <p>Розмірна сітка: Лосини з лампасами.             </p>
           <table class="losiny-z-lampasamy w50">
             <thead> 
               <tr> 
@@ -693,6 +730,9 @@
               </tr>
             </tbody>
           </table>
+        </div>
+        <div class="table">
+          <p>Розмірна сітка: Спідниця "Черлідінг" біфлекс.</p>
           <table class="spidnytsia-cherliding w50">
             <thead> 
               <tr> 
@@ -719,6 +759,9 @@
               </tr>
             </tbody>
           </table>
+        </div>
+        <div class="table">
+          <p>Розмірна сітка: Шифонова спідниця.</p>
           <table class="shyfon-spidnytsia w50">
             <thead> 
               <tr> 
@@ -749,6 +792,9 @@
               </tr>
             </tbody>
           </table>
+        </div>
+        <div class="table">
+          <p>Розмірна сітка: Спідниця "3 сонця".</p>
           <table class="spidnytsia-3sun w33">
             <thead> 
               <tr> 
@@ -790,6 +836,9 @@
               </tr>
             </tbody>
           </table>
+        </div>
+        <div class="table">
+          <p>Розмірна сітка: Спідниця "Чорний квадрат".</p>
           <table class="spidnytsia-black-square w33">
             <thead> 
               <tr> 
@@ -831,6 +880,9 @@
               </tr>
             </tbody>
           </table>
+        </div>
+        <div class="table">
+          <p>Розмірна сітка: Звичайна спідниця.</p>
           <table class="spidnytsia w33">
             <thead> 
               <tr> 
@@ -872,6 +924,9 @@
               </tr>
             </tbody>
           </table>
+        </div>
+        <div class="table">
+          <p>Розмірна сітка: Купальник 1.</p>
           <table class="cupalnik1 w50">
             <thead> 
               <tr> 
@@ -918,6 +973,9 @@
               </tr>
             </tbody>
           </table>
+        </div>
+        <div class="table">
+          <p>Розмірна сітка: Купальник 2.</p>
           <table class="cupalnik2 w50">
             <thead> 
               <tr> 
@@ -964,6 +1022,9 @@
               </tr>
             </tbody>
           </table>
+        </div>
+        <div class="table">
+          <p>Розмірна сітка: Купальник 3.</p>
           <table class="cupalnik3 w50">
             <thead> 
               <tr> 
@@ -1010,6 +1071,9 @@
               </tr>
             </tbody>
           </table>
+        </div>
+        <div class="table">
+          <p>Розмірна сітка: Чешки чорні, білі.</p>
           <table class="w50 cheshki-black"> 
             <thead> 
               <tr> 
@@ -1088,6 +1152,9 @@
               </tr>
             </tbody>
           </table>
+        </div>
+        <div class="table">
+          <p>Розмірна сітка: Чешки кольорові.</p>
           <table class="w50 cheshki-color">
             <thead> 
               <tr> 
@@ -1146,6 +1213,9 @@
               </tr>
             </tbody>
           </table>
+        </div>
+        <div class="table">
+          <p>Розмірна сітка: Джазовки.</p>
           <table class="dzasovki w33"> 
             <thead> 
               <tr> 
@@ -1307,6 +1377,9 @@
               </tr>
             </tbody>
           </table>
+        </div>
+        <div class="table">
+          <p>Розмірна сітка: Джазовки на шнурівці.</p>
           <table class="w50 dzasivki-shnurivka"> 
             <thead> 
               <tr> 
@@ -1373,6 +1446,9 @@
               </tr>
             </tbody>
           </table>
+        </div>
+        <div class="table">
+          <p>Розмірна сітка: Контемпки.</p>
           <table class="w50 contempki"> 
             <thead> 
               <tr> 
@@ -1403,7 +1479,10 @@
               </tr>
             </tbody>
           </table>
-          <table class="w50 baletki"> 
+        </div>
+        <div class="table">
+          <p>Розмірна сітка: Балетки.</p>
+          <table class="w50 baletki">
             <thead> 
               <tr> 
                 <th>Розмір</th>
@@ -1505,6 +1584,9 @@
               </tr>
             </tbody>
           </table>
+        </div>
+        <div class="table">
+          <p>Розмірна сітка: Все інше взуття.</p>
           <table class="w33 all-shoes"> 
             <thead> 
               <tr> 
@@ -1683,7 +1765,7 @@
                   <p class="full-price text-style-card">680₴</p>
                   <p class="old-price text-style-card">980₴</p>
                 </div>
-                <div class="cta-card-block"><a class="cta-card text-style-card" href="">в корзину</a></div>
+                <div class="cta-card-block"><a class="cta-card text-style-card" href="">в кошик</a></div>
               </figcaption>
             </figure>
             <figure>
@@ -1697,7 +1779,7 @@
                   <p class="full-price text-style-card">680₴</p>
                   <p class="old-price text-style-card">980₴</p>
                 </div>
-                <div class="cta-card-block"><a class="cta-card text-style-card" href="">в корзину</a></div>
+                <div class="cta-card-block"><a class="cta-card text-style-card" href="">в кошик</a></div>
               </figcaption>
             </figure>
             <figure>
@@ -1711,7 +1793,7 @@
                   <p class="full-price text-style-card">680₴</p>
                   <p class="old-price text-style-card">980₴</p>
                 </div>
-                <div class="cta-card-block"><a class="cta-card text-style-card" href="">в корзину</a></div>
+                <div class="cta-card-block"><a class="cta-card text-style-card" href="">в кошик</a></div>
               </figcaption>
             </figure>
             <figure>
@@ -1725,11 +1807,11 @@
                   <p class="full-price text-style-card">680₴</p>
                   <p class="old-price text-style-card">980₴</p>
                 </div>
-                <div class="cta-card-block"><a class="cta-card text-style-card" href="">в корзину</a></div>
+                <div class="cta-card-block"><a class="cta-card text-style-card" href="">в кошик</a></div>
               </figcaption>
             </figure>
           </div>
-          <div class="cta-catalog-clock"><a class="cta-catalog text-style-card" href="#">більше</a></div>
+          <div class="cta-catalog-clock center-btn"><a class="cta-catalog text-style-card" href="#">більше</a></div>
         </div>
       </div>
     </main>

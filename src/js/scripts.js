@@ -21,10 +21,24 @@ document.addEventListener("DOMContentLoaded", function () {
         let burger = document.querySelector(".burger"),
             burgerMenu = document.querySelector(".top-navigation")
         burgerBtn = document.querySelector(".burger-wrap")
-
-        burgerBtn.addEventListener("click", function () {
+        
+        function burgerToggle() {
             burger.classList.toggle("active")
             burgerMenu.classList.toggle("active")
+        }
+
+        burgerBtn.addEventListener("click", burgerToggle)
+
+        let scrollLinks = document.querySelectorAll(".scroll-link")
+
+        scrollLinks.forEach((el) => {
+            el.addEventListener("click", function(e) {
+                if (window.innerWidth < 800) {
+                    burgerToggle()
+
+                }
+
+            })
         })
     }
 
@@ -181,7 +195,12 @@ selects.forEach(select => {
         })
         select.classList.toggle('is-opened')
     })
-
+    if (selectItems.length > 0) {
+        const firstItem = selectItems[0]
+        thisInput.value = firstItem.dataset.value
+        selectIn.innerHTML = firstItem.innerHTML
+        firstItem.classList.add('is-active')
+    }
     selectItems.forEach(item => {
         item.addEventListener('click', () => {
             thisInput.value = item.dataset.value
@@ -278,9 +297,9 @@ if (document.querySelector('.slider-range')) {
         sliderWidth = slider.offsetWidth,
         handleWidth = minHandle.offsetWidth
 
-    let minPrice = 0,
-        maxPrice = 1000
-
+    let minPrice = minValueSpan.getAttribute("data-value"),
+        maxPrice = maxValueSpan.getAttribute("data-value")
+    console.log(minPrice, maxPrice);
     function updateRange() {
         const minPos = minHandle.offsetLeft,
             maxPos = maxHandle.offsetLeft
@@ -388,5 +407,23 @@ if(document.querySelector(".main-img")) {
     })
     cancelPopup.addEventListener("click", function() {
         popupImgBlock.style.display = "none"
+    })
+}
+if(document.querySelector('.number')) {
+    const input = document.querySelector('.number'),
+        minButton = document.querySelector('.min'),
+        maxButton = document.querySelector('.max')
+
+    minButton.addEventListener('click', function(e) {
+        e.preventDefault()
+        let currentValue = parseInt(input.value)
+        if (currentValue > parseInt(input.min)) {
+            input.value = currentValue - 1
+        }
+    })
+    maxButton.addEventListener('click', function(e) {
+        e.preventDefault()
+        let currentValue = parseInt(input.value)
+        input.value = currentValue + 1
     })
 }

@@ -28,12 +28,11 @@ html(lang="uk")
                     span.selected-page боді для танців
         main 
             .popup-img 
-                //- .popup-img-block //замість блоку задати на фото і замість падінга бордер
-                    picture
-                        img(src="", alt="")
-                        a(href="#").cancel-popup
-                            svg(width="15.026367" height="15.036133" viewBox="0 0 15.0264 15.0361" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink")
-                                path(id="видалити" d="M0.424805 0.29834C0.819336 -0.0993652 1.43848 -0.0993652 1.83301 0.29834L7.51367 6.03198L13.1943 0.29834C13.5879 -0.0993652 14.208 -0.0993652 14.6016 0.29834C14.9961 0.696289 14.9961 1.32129 14.6016 1.71924L8.9209 7.45288L14.7314 13.3171C15.125 13.7148 15.125 14.3401 14.7314 14.7378C14.3369 15.1355 13.7178 15.1355 13.3232 14.7378L7.51367 8.87354L1.70312 14.7378C1.30957 15.1355 0.689453 15.1355 0.295898 14.7378C-0.0986328 14.3401 -0.0986328 13.7148 0.295898 13.3171L6.10547 7.45288L0.424805 1.71924C0.03125 1.32129 0.03125 0.696289 0.424805 0.29834Z" clip-rule="evenodd" fill-opacity="1.000000" fill-rule="evenodd")
+                picture.popup-img-block
+                    img(src="", alt="")
+                    a(href="#").cancel-popup
+                        svg(width="15.026367" height="15.036133" viewBox="0 0 15.0264 15.0361" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink")
+                            path(id="видалити" d="M0.424805 0.29834C0.819336 -0.0993652 1.43848 -0.0993652 1.83301 0.29834L7.51367 6.03198L13.1943 0.29834C13.5879 -0.0993652 14.208 -0.0993652 14.6016 0.29834C14.9961 0.696289 14.9961 1.32129 14.6016 1.71924L8.9209 7.45288L14.7314 13.3171C15.125 13.7148 15.125 14.3401 14.7314 14.7378C14.3369 15.1355 13.7178 15.1355 13.3232 14.7378L7.51367 8.87354L1.70312 14.7378C1.30957 15.1355 0.689453 15.1355 0.295898 14.7378C-0.0986328 14.3401 -0.0986328 13.7148 0.295898 13.3171L6.10547 7.45288L0.424805 1.71924C0.03125 1.32129 0.03125 0.696289 0.424805 0.29834Z" clip-rule="evenodd" fill-opacity="1.000000" fill-rule="evenodd")
             .wrapper
                 .card-main 
                     .img-block 
@@ -106,16 +105,16 @@ html(lang="uk")
                             .size.items-center 
                                 span Розмір:
                                 p
-                                    input(type="checkbox" id="size1" name="xs")
+                                    input(type="radio" id="size1" name="size")
                                     label(for="size1") 
                                         span XS
-                                    input(type="checkbox" id="size2" name="s")
+                                    input(type="radio" id="size2" name="size")
                                     label(for="size2") 
                                         span S
-                                    input(type="checkbox" id="size3" name="m")
+                                    input(type="radio" id="size3" name="size")
                                     label(for="size3") 
                                         span M
-                                    input(type="checkbox" id="size4" name="l")
+                                    input(type="radio" id="size4" name="size")
                                     label(for="size4") 
                                         span L
                             .color-card.items-center
@@ -123,26 +122,31 @@ html(lang="uk")
                                 label.arrow-select
                                     .select
                                         input(type='hidden').select__input
-                                        .select__in 01 чорний
+                                        .select__in 
                                         .select__list
-                                            .select__item(data-value='2') 01 чорний
-                                            .select__item(data-value='3') 01 чорний
-                                            .select__item(data-value='4') 01 чорний
-                                            .select__item(data-value='5') 01 чорний
+                                            .select__item(data-value='3') 
+                                                span(style="background-color: #0f0")
+                                                | 01 зелений
+                                            .select__item(data-value='2') 
+                                                span(style="background-color: #f00")
+                                                | 01 червоний
+                                            .select__item(data-value='4') 
+                                                span(style="background-color: #00f")
+                                                | 01 синій
+                                            .select__item(data-value='5') 
+                                                span(style="background-color: #ff0")
+                                                | 01 жовтий
                             .count.items-center 
                                 span Кількість:
                                 p.d-flex
                                     a.min(href="#") 
                                         span -
-                                    a.number(href="#") 
-                                        span 1
+                                    input(type="number" min="1" value="1").number
                                     a.max(href="#") 
                                         span +
                         .cta-catalog-clock 
-                            a.cta-catalog.text-style-card(href="#") в корзину
-                .table
-                    p Розмірна сітка
-                    include components/table
+                            a.cta-catalog.text-style-card(href="#") в кошик
+                include components/table
                 .same-card 
                     .text-baner 
                         h2 схожі товари
@@ -159,7 +163,7 @@ html(lang="uk")
                                     p.full-price.text-style-card 680₴
                                     p.old-price.text-style-card 980₴
                                 .cta-card-block
-                                    a.cta-card.text-style-card(href="") в корзину
+                                    a.cta-card.text-style-card(href="") в кошик
                         figure
                             figcaption.popular-card.card
                                 a.mask(href="card-page.html") 
@@ -172,7 +176,7 @@ html(lang="uk")
                                     p.full-price.text-style-card 680₴
                                     p.old-price.text-style-card 980₴
                                 .cta-card-block
-                                    a.cta-card.text-style-card(href="") в корзину
+                                    a.cta-card.text-style-card(href="") в кошик
                         figure
                             figcaption.popular-card.card
                                 a.mask(href="card-page.html") 
@@ -185,7 +189,7 @@ html(lang="uk")
                                     p.full-price.text-style-card 680₴
                                     p.old-price.text-style-card 980₴
                                 .cta-card-block
-                                    a.cta-card.text-style-card(href="") в корзину
+                                    a.cta-card.text-style-card(href="") в кошик
                         figure
                             figcaption.popular-card.card
                                 a.mask(href="card-page.html") 
@@ -198,9 +202,9 @@ html(lang="uk")
                                     p.full-price.text-style-card 680₴
                                     p.old-price.text-style-card 980₴
                                 .cta-card-block
-                                    a.cta-card.text-style-card(href="") в корзину
+                                    a.cta-card.text-style-card(href="") в кошик
                         
-                    .cta-catalog-clock
+                    .cta-catalog-clock.center-btn
                         a.cta-catalog.text-style-card(href="#") більше
         footer 
             include components/footer

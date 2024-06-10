@@ -49,9 +49,9 @@
           <nav class="top-navigation">
             <ul class="flex-between flex-wrap">
               <li><a href="index.html">головна</a></li>
-              <li><a href="index.html#aboutUs">про нас</a></li>
+              <li class="scroll-link"><a href="index.html#aboutUs">про нас</a></li>
               <li><a href="catalog.html">каталог</a></li>
-              <li><a href="index.html#contacts">контакти</a></li>
+              <li class="scroll-link"><a href="index.html#contacts">контакти</a></li>
             </ul>
           </nav>
           <div class="logo"> <a href="index.html"> 
@@ -70,12 +70,12 @@
     </header>
     <main>
       <div class="wrapper">
-        <p class="page-look"> <a href="index.html">головна</a><span class="arrow"></span><span class="selected-page">корзина</span></p>
-        <h1 class="basket-title">корзина</h1>
+        <p class="page-look"> <a href="index.html">головна</a><span class="arrow"></span><span class="selected-page">кошик</span></p>
+        <h1 class="basket-title">кошик</h1>
         <div class="flex-between basket-margin">
           <div class="products-to-buy"> 
-            <div class="product-to-buy--card flex-between items-center relative">
-              <div class="delete-product"></div>
+            <form class="product-to-buy--card flex-between items-center relative" method="post" action="">
+              <button class="delete-product" type="submit"></button>
               <div class="prod-img-description d-flex">
                 <div class="prod-image">
                   <picture><img src="img/product-image.jpg" alt="" loading="lazy"></picture>
@@ -99,9 +99,9 @@
                 </div>
               </div>
               <div class="prod-price items-center"> <b>680₴</b><span>980₴</span></div>
-            </div>
-            <div class="product-to-buy--card flex-between items-center relative">
-              <div class="delete-product"></div>
+            </form>
+            <form class="product-to-buy--card flex-between items-center relative" method="post" action="">
+              <button class="delete-product" type="submit"></button>
               <div class="prod-img-description d-flex">
                 <div class="prod-image">
                   <picture><img src="img/product-image.jpg" alt="" loading="lazy"></picture>
@@ -125,9 +125,9 @@
                 </div>
               </div>
               <div class="prod-price items-center"> <b>680₴</b><span>980₴</span></div>
-            </div>
-            <div class="product-to-buy--card flex-between items-center relative">
-              <div class="delete-product"></div>
+            </form>
+            <form class="product-to-buy--card flex-between items-center relative" method="post" action="">
+              <button class="delete-product" type="submit"></button>
               <div class="prod-img-description d-flex">
                 <div class="prod-image">
                   <picture><img src="img/product-image.jpg" alt="" loading="lazy"></picture>
@@ -151,9 +151,9 @@
                 </div>
               </div>
               <div class="prod-price items-center"> <b>680₴</b><span>980₴</span></div>
-            </div>
-            <div class="product-to-buy--card flex-between items-center relative">
-              <div class="delete-product"></div>
+            </form>
+            <form class="product-to-buy--card flex-between items-center relative" method="post" action="">
+              <button class="delete-product" type="submit"></button>
               <div class="prod-img-description d-flex">
                 <div class="prod-image">
                   <picture><img src="img/product-image.jpg" alt="" loading="lazy"></picture>
@@ -177,7 +177,7 @@
                 </div>
               </div>
               <div class="prod-price items-center"> <b>680₴</b><span>980₴</span></div>
-            </div>
+            </form>
           </div>
           <div class="check-out">
             <h3>оформлення замовлення</h3>
@@ -207,7 +207,7 @@
               </div>
               <div class="flex-between"> 
                 <label class="w48" for="phone"><b>Телефон</b>
-                  <input type="text" id="phone">
+                  <input type="tel" id="phone">
                 </label>
                 <label class="w48" for="city"><b>Місто</b>
                   <input type="text" id="city">
@@ -219,33 +219,56 @@
               <div class="delivery-payment-methods flex-between">
                 <div class="delivery-method">
                   <p>Спосіб доставки:</p>
-                  <input class="checkbox radio" type="radio" name="deliveryMethod" id="newPoszht">
-                  <label for="newPoszht">Нова пошта у відділення</label>
-                  <input class="checkbox radio" type="radio" name="deliveryMethod" id="newPoszhtPozhtomat">
-                  <label for="newPoszhtPozhtomat">Нова пошта у поштомат</label>
-                  <input class="checkbox radio" type="radio" name="deliveryMethod" id="UkrPoshzta">
-                  <label for="UkrPoshzta">Укрпошта</label>
-                  <input class="checkbox radio" type="radio" name="deliveryMethod" id="selfPickup">
-                  <label for="selfPickup">Самовивіз</label>
+                  <p class="items-center">
+                    <label for="newPoszht"> 
+                      <input class="checkbox radio" type="radio" name="deliveryMethod" id="newPoszht">
+                    </label><span class="input-text">Нова пошта у відділення</span>
+                  </p>
+                  <p class="items-center">
+                    <label for="newPoszhtPozhtomat">
+                      <input class="checkbox radio" type="radio" name="deliveryMethod" id="newPoszhtPozhtomat">
+                    </label><span class="input-text">Нова пошта у поштомат</span>
+                  </p>
+                  <p class="items-center">
+                    <label for="UkrPoshzta">
+                      <input class="checkbox radio" type="radio" name="deliveryMethod" id="UkrPoshzta">
+                    </label><span class="input-text">Укрпошта</span>
+                  </p>
+                  <p class="items-center">
+                    <label for="selfPickup"> 
+                      <input class="checkbox radio" type="radio" name="deliveryMethod" id="selfPickup">
+                    </label><span class="input-text">Самовивіз</span>
+                  </p>
                   <label class="numbPost"> <span> </span>
                     <input type="number" min="1">
                   </label>
                 </div>
                 <div class="payment-method">
                   <p>Спосіб оплати:</p>
-                  <input class="checkbox radio" type="radio" name="paymentMethod" id="visaMastercard">
-                  <label for="visaMastercard">Карта Visa/MasterCard </label>
-                  <input class="checkbox radio" type="radio" name="paymentMethod" id="byCard">
-                  <label for="byCard">На карту </label>
-                  <input class="checkbox radio" type="radio" name="paymentMethod" id="paymentOnAccount">
-                  <label for="paymentOnAccount">На рахунок </label>
-                  <input class="checkbox radio" type="radio" name="paymentMethod" id="subscription">
-                  <label for="subscription">Часткова передплата (150₴)</label>
+                  <p class="items-center">   
+                    <label for="visaMastercard"> 
+                      <input class="checkbox radio" type="radio" name="paymentMethod" id="visaMastercard">
+                    </label><span class="input-text">Карта Visa/MasterCard </span>
+                  </p>
+                  <p class="items-center">   
+                    <label for="byCard">
+                      <input class="checkbox radio" type="radio" name="paymentMethod" id="byCard">
+                    </label><span class="input-text">На карту </span>
+                  </p>
+                  <p class="items-center">   
+                    <label for="paymentOnAccount"> 
+                      <input class="checkbox radio" type="radio" name="paymentMethod" id="paymentOnAccount">
+                    </label><span class="input-text">На рахунок </span>
+                  </p>
+                  <p class="items-center">   
+                    <label for="subscription"> 
+                      <input class="checkbox radio" type="radio" name="paymentMethod" id="subscription">
+                    </label><span class="input-text">Часткова передплата (150₴)</span>
+                  </p>
                 </div>
               </div>
               <div class="flex-between check-out-btns">
-                <button class="cta-catalog" type="submit"> ПІДТВЕРДИТИ</button>
-                <button class="cta-card" type="button">продовжити покупки</button>
+                <button class="cta-catalog" type="submit"> ПІДТВЕРДИТИ</button><a class="cta-card" href="catalog.html">продовжити покупки</a>
               </div>
             </form>
           </div>
