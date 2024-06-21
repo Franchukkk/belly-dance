@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Sitemap: https://belly-dance.com.ua/sitemap.xml
+Host:  https://belly-dance.com.ua/
