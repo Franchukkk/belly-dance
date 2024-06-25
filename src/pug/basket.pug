@@ -2,14 +2,16 @@ doctype html
 html(lang="uk")
     head
         title Кошик
-        link(rel="stylesheet", href="css/style.css")
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Yeseva+One&display=swap" rel="stylesheet">
         include components/meta
+        meta(name="title" content="Кошик покупок")
+        meta(name="description" content="Кошик ваших покупок в інтернет магазині одягу для танців Belly dance")
+        meta(property="og:url" content="https://belly-dance.com.ua/basket.html")
+        meta(property="og:title" content="Кошик покупок")
+        meta(property="og:description" content="Кошик ваших покупок в інтернет магазині одягу для танців Belly dance")
+        meta(property="og:image" content="img/logo.svg")
+        meta(property="og:type" content="website")
+        meta(property="og:site_name" content="belly-dance.com.ua")
+
     body 
         include components/mixins
         include components/privacy-policy
