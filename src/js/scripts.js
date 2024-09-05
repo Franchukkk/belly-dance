@@ -279,9 +279,8 @@ document.addEventListener("DOMContentLoaded", function () {
         window.addEventListener('resize', () => {
             slider()
         })
-    }
+    }    
 
-    //кастомний рендж для ціни
     if (document.querySelector('.slider-range')) {
         const slider = document.querySelector('.slider-range'),
             minHandle = document.querySelector('#min-handle'),
@@ -291,15 +290,31 @@ document.addEventListener("DOMContentLoaded", function () {
             maxPriceInput = document.querySelector('#max-price'),
             minValueSpan = document.querySelector('#min-value'),
             maxValueSpan = document.querySelector('#max-value'),
-            sliderWidth = slider.offsetWidth,
-            handleWidth = minHandle.offsetWidth;
+            handleWidth = minHandle.offsetWidth
     
         let minPrice = parseFloat(minValueSpan.getAttribute("data-value")),
             maxPrice = parseFloat(maxValueSpan.getAttribute("data-value"))
     
+        let sliderWidth
+    
+        if (localStorage.getItem('sliderWidth')) {
+            sliderWidth = parseFloat(localStorage.getItem('sliderWidth'))
+        } else {
+            sliderWidth = slider.offsetWidth
+            localStorage.setItem('sliderWidth', sliderWidth)
+        }
+    
+        if (localStorage.getItem('minValue') && localStorage.getItem('maxValue') && localStorage.getItem('minPos') && localStorage.getItem('maxPos')) {
+            minPriceInput.value = localStorage.getItem('minValue')
+            maxPriceInput.value = localStorage.getItem('maxValue')
+            minHandle.style.left = localStorage.getItem('minPos') + 'px'
+            maxHandle.style.left = localStorage.getItem('maxPos') + 'px'
+            updateRange()
+        }
+    
         function updateRange() {
             const minPos = minHandle.offsetLeft,
-                maxPos = maxHandle.offsetLeft;
+                maxPos = maxHandle.offsetLeft
     
             range.style.left = minPos + 'px'
             range.style.width = (maxPos - minPos) + 'px'
@@ -311,6 +326,11 @@ document.addEventListener("DOMContentLoaded", function () {
             maxPriceInput.value = maxValue
             minValueSpan.textContent = minValue
             maxValueSpan.textContent = maxValue
+    
+            localStorage.setItem('minValue', minValue)
+            localStorage.setItem('maxValue', maxValue)
+            localStorage.setItem('minPos', minPos)
+            localStorage.setItem('maxPos', maxPos)
         }
     
         function handleDrag(e, handle) {
@@ -354,81 +374,7 @@ document.addEventListener("DOMContentLoaded", function () {
         updateRange()
     }
     
-    // if (document.querySelector('.slider-range')) {
-    //     const slider = document.querySelector('.slider-range'),
-    //         minHandle = document.querySelector('#min-handle'),
-    //         maxHandle = document.querySelector('#max-handle'),
-    //         range = document.querySelector('#range'),
-    //         minPriceInput = document.querySelector('#min-price'),
-    //         maxPriceInput = document.querySelector('#max-price'),
-    //         minValueSpan = document.querySelector('#min-value'),
-    //         maxValueSpan = document.querySelector('#max-value'),
-    //         sliderWidth = slider.offsetWidth,
-    //         handleWidth = minHandle.offsetWidth
-    
-    //     let minPrice = minValueSpan.getAttribute("data-value"),
-    //         maxPrice = maxValueSpan.getAttribute("data-value")
-    //     console.log(minPrice, maxPrice);
-    
-    //     function updateRange() {
-    //         const minPos = minHandle.offsetLeft,
-    //             maxPos = maxHandle.offsetLeft
-    
-    //         range.style.left = minPos + 'px'
-    //         range.style.width = (maxPos - minPos) + 'px'
-    
-    //         const minValue = Math.round(minPrice + (minPos / (sliderWidth - handleWidth)) * (maxPrice - minPrice)),
-    //             maxValue = Math.round(minPrice + (maxPos / (sliderWidth - handleWidth)) * (maxPrice - minPrice))
-    //             console.log(maxValue);
-    //         minPriceInput.value = minValue
-    //         maxPriceInput.value = maxValue
-    //         minValueSpan.textContent = minValue
-    //         maxValueSpan.textContent = maxValue
-    //     }
-    
-    //     function handleDrag(e, handle) {
-    //         e.preventDefault()
-    
-    //         const handleStartX = e.clientX || e.touches[0].clientX
-    //         const handleStartLeft = handle.offsetLeft
-    
-    //         const onMove = (moveEvent) => {
-    //             const moveX = moveEvent.clientX || moveEvent.touches[0].clientX
-    //             let newLeft = moveX - handleStartX + handleStartLeft
-    
-    //             if (handle === minHandle) {
-    //                 newLeft = Math.max(0, Math.min(newLeft, maxHandle.offsetLeft - handleWidth))
-    //             } else {
-    //                 newLeft = Math.max(minHandle.offsetLeft + handleWidth, Math.min(newLeft, sliderWidth - handleWidth))
-    //             }
-    
-    //             handle.style.left = newLeft + 'px'
-    //             updateRange()
-    //         }
-    
-    //         const onEnd = () => {
-    //             document.removeEventListener('mousemove', onMove)
-    //             document.removeEventListener('mouseup', onEnd)
-    //             document.removeEventListener('touchmove', onMove)
-    //             document.removeEventListener('touchend', onEnd)
-    //         }
-    
-    //         document.addEventListener('mousemove', onMove)
-    //         document.addEventListener('mouseup', onEnd)
-    //         document.addEventListener('touchmove', onMove)
-    //         document.addEventListener('touchend', onEnd)
-    //     }
-    
-    //     minHandle.addEventListener('mousedown', (e) => handleDrag(e, minHandle))
-    //     maxHandle.addEventListener('mousedown', (e) => handleDrag(e, maxHandle))
-    //     minHandle.addEventListener('touchstart', (e) => handleDrag(e, minHandle))
-    //     maxHandle.addEventListener('touchstart', (e) => handleDrag(e, maxHandle))
-    
-    //     updateRange()
-    
-    // }
-
-    // поле на номер відділення
+        // поле на номер відділення
     if (document.querySelector(".radio")) {
         const radio = document.querySelectorAll(".delivery-method .radio"),
             numbPost = document.querySelector(".numbPost"),
